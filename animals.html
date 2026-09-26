@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Animal Care Guide — Healthcare, maintenance, feeding overview, and clinical concerns for Cow, Buffalo, Goat, and Sheep on Smart Animal Care.">
+  <title>Animal Care Guides | Smart Animal Care</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       GLOBAL HEADER & NAVIGATION
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Smart Animal Care Home">
+        <div class="logo-icon" aria-hidden="true">🐄</div>
+        <div class="brand-text-wrap">
+          <span class="brand-name">Smart Animal Care</span>
+          <span class="brand-tagline" data-i18n="brand-tagline">Healthy Animals, Happy Farmers</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link" data-i18n="nav-home">Home</a>
+        <a href="animals.html" class="nav-link active" data-i18n="nav-animals">Animals</a>
+        <a href="diseases.html" class="nav-link" data-i18n="nav-diseases">Diseases</a>
+        <a href="nutrition.html" class="nav-link" data-i18n="nav-nutrition">Nutrition</a>
+        <a href="care-tips.html" class="nav-link" data-i18n="nav-care">Preventive Care</a>
+        <a href="veterinarians.html" class="nav-link" data-i18n="nav-vet">Find a Vet</a>
+        <a href="contact.html" class="nav-link" data-i18n="nav-contact">About / Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="lang-selector" aria-label="Select Language">
+          <button type="button" class="lang-btn active" data-lang="en">EN</button>
+          <button type="button" class="lang-btn" data-lang="hi">HI</button>
+          <button type="button" class="lang-btn" data-lang="mr">MR</button>
+        </div>
+        <a href="veterinarians.html" class="btn btn-primary btn-sm nav-cta-btn" data-i18n="cta-find-vet">
+          Find a Veterinarian
+        </a>
+        <button type="button" class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer">
+    <div class="brand-logo" style="margin-bottom: var(--space-md);">
+      <div class="logo-icon">🐄</div>
+      <div class="brand-text-wrap">
+        <span class="brand-name">Smart Animal Care</span>
+        <span class="brand-tagline">Healthy Animals, Happy Farmers</span>
+      </div>
+    </div>
+    <nav class="flex flex-col gap-sm">
+      <a href="index.html" class="nav-link mobile-nav-link">🏠 Home</a>
+      <a href="animals.html" class="nav-link mobile-nav-link active">🐄 Animal Care</a>
+      <a href="diseases.html" class="nav-link mobile-nav-link">🩺 Disease Guide</a>
+      <a href="nutrition.html" class="nav-link mobile-nav-link">🌾 Nutrition & Feed</a>
+      <a href="care-tips.html" class="nav-link mobile-nav-link">🛡️ Preventive Care</a>
+      <a href="veterinarians.html" class="nav-link mobile-nav-link">👨‍⚕️ Find a Vet</a>
+      <a href="contact.html" class="nav-link mobile-nav-link">📞 About & Contact</a>
+    </nav>
+    <div style="margin-top: auto; padding-top: var(--space-md); border-top: 1px solid var(--color-border);">
+      <a href="veterinarians.html" class="btn btn-primary btn-block">Find a Veterinarian</a>
+    </div>
+  </aside>
+
+  <!-- ========================================================================
+       PAGE BANNER
+       ======================================================================== -->
+  <div class="page-banner">
+    <div class="container banner-content">
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a> &gt; <span>Animals</span>
+      </div>
+      <h1 class="page-banner-title">Livestock Care Guides</h1>
+      <p class="page-banner-subtitle">
+        Species-specific housing, healthcare, nutrition overviews, and daily maintenance practices for dairy cattle, buffalo, goats, and sheep.
+      </p>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MAIN SECTION
+       ======================================================================== -->
+  <main class="section">
+    <div class="container">
+
+      <!-- Disclaimer Banner -->
+      <div class="disclaimer-banner">
+        <div class="disclaimer-icon" aria-hidden="true">⚠️</div>
+        <div class="disclaimer-text">
+          <h4>Educational Animal Health Guidance</h4>
+          <p>
+            The care information provided below is general educational material designed for good farm husbandry. It does not replace a veterinary examination. If any livestock exhibits acute illness, respiratory distress, or cessation of rumination, consult a certified veterinarian immediately.
+          </p>
+        </div>
+      </div>
+
+      <!-- Search & Filter Controls -->
+      <div class="filter-search-container">
+        <div class="search-input-wrap">
+          <span class="search-icon">🔍</span>
+          <input 
+            type="text" 
+            id="animalSearchInput" 
+            class="search-input" 
+            placeholder="Search animals, breeds or terms (e.g., Dairy Cow, Murrah Buffalo, Jamunapari Goat, Sheep)..."
+            aria-label="Search animals"
+          >
+        </div>
+
+        <div class="filter-pills-wrap" role="tablist" aria-label="Filter animals by species">
+          <button type="button" class="filter-pill animal-filter-pill active" data-filter="all">All Animals (4)</button>
+          <button type="button" class="filter-pill animal-filter-pill" data-filter="cow">Cattle / Cow (गाय)</button>
+          <button type="button" class="filter-pill animal-filter-pill" data-filter="buffalo">Water Buffalo (भैंस)</button>
+          <button type="button" class="filter-pill animal-filter-pill" data-filter="goat">Goat (बकरी)</button>
+          <button type="button" class="filter-pill animal-filter-pill" data-filter="sheep">Sheep (भेड़)</button>
+        </div>
+
+        <div class="results-meta">
+          <span id="animalResultsCount">Showing 4 of 4 animals</span>
+          <span>Tip: Click "View Full Care Guide" on any animal for clinical vitals and daily routines.</span>
+        </div>
+      </div>
+
+      <!-- Animal Cards Grid -->
+      <div class="grid grid-2" id="animalGrid">
+
+        <!-- 1. COW CARD -->
+        <article class="animal-card" data-animal-type="cow">
+          <div class="animal-card-img-wrap">
+            <img src="images/cow.jpg" alt="Indian dairy cow grazing in rural pasture" loading="lazy">
+            <span class="badge badge-primary animal-card-tag">Dairy & Draught</span>
+          </div>
+          <div class="animal-card-body">
+            <h2 class="animal-title">Dairy Cow (गाय / गोवंश)</h2>
+            <p class="animal-scientific">Bos taurus / Bos indicus</p>
+            <p class="animal-desc">
+              Cattle form the backbone of rural dairy economies. Whether indigenous breeds like Gir, Sahiwal, and Kankrej or high-yielding crossbreds, cows require consistent feeding schedules, clean bedding, and careful udder hygiene to sustain optimal milk production.
+            </p>
+
+            <div class="animal-quick-facts">
+              <div class="fact-item">
+                <span>Gestation Period:</span>
+                <strong>280 - 285 Days</strong>
+              </div>
+              <div class="fact-item">
+                <span>Daily Water:</span>
+                <strong>60 - 90 Liters</strong>
+              </div>
+              <div class="fact-item">
+                <span>Normal Body Temp:</span>
+                <strong>38.5°C (101.5°F)</strong>
+              </div>
+              <div class="fact-item">
+                <span>Key Productivity:</span>
+                <strong>Milk & Organic Manure</strong>
+              </div>
+            </div>
+
+            <div style="margin-bottom: var(--space-md);">
+              <h4 style="font-size: 0.9rem; color: var(--color-primary-dark); margin-bottom: 0.25rem;">Key Care Focus:</h4>
+              <ul style="font-size: 0.85rem; color: var(--color-text-muted); list-style: disc; padding-left: 1.25rem; line-height: 1.5;">
+                <li>Grooved concrete or rubber-matted floors to prevent hoof slip and lameness.</li>
+                <li>Post-milking teat dip with 0.5% iodine solution to shield teat canals from environmental bacteria.</li>
+                <li>Routine deworming at onset of monsoon and post-monsoon.</li>
+              </ul>
+            </div>
+
+            <div class="animal-card-footer">
+              <button type="button" class="btn btn-primary btn-block btn-view-animal-details" data-animal="cow">
+                View Full Care Guide &rarr;
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. BUFFALO CARD -->
+        <article class="animal-card" data-animal-type="buffalo">
+          <div class="animal-card-img-wrap">
+            <img src="images/buffalo.jpg" alt="High yielding Indian water buffalo" loading="lazy">
+            <span class="badge badge-primary animal-card-tag">High Fat Dairy</span>
+          </div>
+          <div class="animal-card-body">
+            <h2 class="animal-title">Water Buffalo (भैंस)</h2>
+            <p class="animal-scientific">Bubalus bubalis</p>
+            <p class="animal-desc">
+              Renowned for producing dense milk rich in butterfat (7-8%), water buffaloes such as the Murrah, Nili-Ravi, and Mehsana are robust converters of coarse crop residues. They have fewer sweat glands and dark skin, demanding dedicated heat mitigation.
+            </p>
+
+            <div class="animal-quick-facts">
+              <div class="fact-item">
+                <span>Gestation Period:</span>
+                <strong>305 - 315 Days</strong>
+              </div>
+              <div class="fact-item">
+                <span>Daily Water:</span>
+                <strong>80 - 110 Liters</strong>
+              </div>
+              <div class="fact-item">
+                <span>Normal Body Temp:</span>
+                <strong>38.0°C (100.5°F)</strong>
+              </div>
+              <div class="fact-item">
+                <span>Key Productivity:</span>
+                <strong>High Fat Milk & Draught</strong>
+              </div>
+            </div>
+
+            <div style="margin-bottom: var(--space-md);">
+              <h4 style="font-size: 0.9rem; color: var(--color-primary-dark); margin-bottom: 0.25rem;">Key Care Focus:</h4>
+              <ul style="font-size: 0.85rem; color: var(--color-text-muted); list-style: disc; padding-left: 1.25rem; line-height: 1.5;">
+                <li>Provide clean wallowing ponds or water splashing twice daily in hot summers.</li>
+                <li>Inspect wider teat orifices for mud contamination before and after milking.</li>
+                <li>Watch for silent heat signs during morning and evening milking sessions.</li>
+              </ul>
+            </div>
+
+            <div class="animal-card-footer">
+              <button type="button" class="btn btn-primary btn-block btn-view-animal-details" data-animal="buffalo">
+                View Full Care Guide &rarr;
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. GOAT CARD -->
+        <article class="animal-card" data-animal-type="goat">
+          <div class="animal-card-img-wrap">
+            <img src="images/goat.jpg" alt="Healthy goat browsing" loading="lazy">
+            <span class="badge badge-primary animal-card-tag">Small Ruminant</span>
+          </div>
+          <div class="animal-card-body">
+            <h2 class="animal-title">Domestic Goat (बकरी)</h2>
+            <p class="animal-scientific">Capra hircus</p>
+            <p class="animal-desc">
+              Affectionately known as the farmer’s companion or "poor man’s cow", goats are prolific, drought-hardy browsers. Famous Indian breeds including Jamunapari, Black Bengal, and Sirohi supply nutritious milk and meat with minimal starting capital.
+            </p>
+
+            <div class="animal-quick-facts">
+              <div class="fact-item">
+                <span>Gestation Period:</span>
+                <strong>145 - 152 Days</strong>
+              </div>
+              <div class="fact-item">
+                <span>Daily Water:</span>
+                <strong>5 - 10 Liters</strong>
+              </div>
+              <div class="fact-item">
+                <span>Normal Body Temp:</span>
+                <strong>39.0°C (102.2°F)</strong>
+              </div>
+              <div class="fact-item">
+                <span>Key Productivity:</span>
+                <strong>Meat, Milk & Kids</strong>
+              </div>
+            </div>
+
+            <div style="margin-bottom: var(--space-md);">
+              <h4 style="font-size: 0.9rem; color: var(--color-primary-dark); margin-bottom: 0.25rem;">Key Care Focus:</h4>
+              <ul style="font-size: 0.85rem; color: var(--color-text-muted); list-style: disc; padding-left: 1.25rem; line-height: 1.5;">
+                <li>Keep shed floor dry and elevated on slats; goats cannot tolerate damp, muddy floors.</li>
+                <li>Regularly trim overgrown hooves to forestall contagious foot rot.</li>
+                <li>Strict adherence to PPR and Enterotoxemia (ET) vaccination calendars.</li>
+              </ul>
+            </div>
+
+            <div class="animal-card-footer">
+              <button type="button" class="btn btn-primary btn-block btn-view-animal-details" data-animal="goat">
+                View Full Care Guide &rarr;
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. SHEEP CARD -->
+        <article class="animal-card" data-animal-type="sheep">
+          <div class="animal-card-img-wrap">
+            <img src="images/sheep.jpg" alt="Flock of healthy sheep in grassland" loading="lazy">
+            <span class="badge badge-primary animal-card-tag">Wool & Meat</span>
+          </div>
+          <div class="animal-card-body">
+            <h2 class="animal-title">Domestic Sheep (भेड़)</h2>
+            <p class="animal-scientific">Ovis aries</p>
+            <p class="animal-desc">
+              Sheep graze close to the ground and excel at utilizing stubble, arid grasses, and hill pastures. Breeds such as the Marwari, Deccani, and Nellore furnish wool, mutton, and rich penning manure, but require protection from wet fleece hypothermia.
+            </p>
+
+            <div class="animal-quick-facts">
+              <div class="fact-item">
+                <span>Gestation Period:</span>
+                <strong>145 - 150 Days</strong>
+              </div>
+              <div class="fact-item">
+                <span>Daily Water:</span>
+                <strong>4 - 8 Liters</strong>
+              </div>
+              <div class="fact-item">
+                <span>Normal Body Temp:</span>
+                <strong>39.0°C (102.5°F)</strong>
+              </div>
+              <div class="fact-item">
+                <span>Key Productivity:</span>
+                <strong>Mutton, Coarse Wool & Manure</strong>
+              </div>
+            </div>
+
+            <div style="margin-bottom: var(--space-md);">
+              <h4 style="font-size: 0.9rem; color: var(--color-primary-dark); margin-bottom: 0.25rem;">Key Care Focus:</h4>
+              <ul style="font-size: 0.85rem; color: var(--color-text-muted); list-style: disc; padding-left: 1.25rem; line-height: 1.5;">
+                <li>Annual shearing prior to hot months and winter to avoid heat distress and fleece soiling.</li>
+                <li>Flock dipping in antiparasitic solution 2-3 weeks post-shearing for tick and mite control.</li>
+                <li>Avoid copper-rich cattle supplements to protect sheep from fatal copper toxicity.</li>
+              </ul>
+            </div>
+
+            <div class="animal-card-footer">
+              <button type="button" class="btn btn-primary btn-block btn-view-animal-details" data-animal="sheep">
+                View Full Care Guide &rarr;
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- No Results State -->
+      <div id="animalNoResults" class="no-results-box">
+        <div class="no-results-icon">🔍</div>
+        <h3>No Animals Match Your Search</h3>
+        <p class="text-muted" style="margin-bottom: var(--space-md);">
+          Try searching for "cow", "buffalo", "goat", or "sheep".
+        </p>
+        <button type="button" class="btn btn-outline btn-sm" onclick="document.getElementById('animalSearchInput').value=''; document.querySelector('.animal-filter-pill[data-filter=\'all\']').click();">
+          Reset Filter & Search
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ========================================================================
+       ANIMAL DETAIL MODAL (Interactive JavaScript Component)
+       ======================================================================== -->
+  <div class="modal-overlay" id="animalDetailModal" role="dialog" aria-modal="true" aria-labelledby="modalAnimalName">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div>
+          <span class="badge badge-primary" id="modalAnimalTag">Ruminant</span>
+          <h2 id="modalAnimalName" style="font-size: 1.4rem; color: var(--color-primary-dark); margin-top: 0.2rem;">Animal Name</h2>
+          <p id="modalAnimalSpecies" style="font-size: 0.85rem; color: var(--color-text-muted); font-style: italic;">Scientific Name</p>
+        </div>
+        <button type="button" class="modal-close-btn" id="closeAnimalModal" aria-label="Close modal">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Vitals Grid -->
+        <div class="animal-quick-facts" style="margin-bottom: var(--space-lg); background: var(--color-primary-subtle);">
+          <div class="fact-item">
+            <span>Average Lifespan:</span>
+            <strong id="modalAnimalLifespan">--</strong>
+          </div>
+          <div class="fact-item">
+            <span>Gestation Duration:</span>
+            <strong id="modalAnimalGestation">--</strong>
+          </div>
+          <div class="fact-item">
+            <span>Normal Temperature:</span>
+            <strong id="modalAnimalTemp">--</strong>
+          </div>
+          <div class="fact-item">
+            <span>Daily Water Intake:</span>
+            <strong id="modalAnimalWater">--</strong>
+          </div>
+        </div>
+
+        <div style="margin-bottom: var(--space-lg);">
+          <h4 style="color: var(--color-primary-dark); margin-bottom: 0.35rem;">Introduction & Husbandry Overview</h4>
+          <p id="modalAnimalIntro" style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.5;"></p>
+        </div>
+
+        <div style="margin-bottom: var(--space-lg);">
+          <h4 style="color: var(--color-primary-dark); margin-bottom: 0.35rem;">Daily Care & Management Checklist</h4>
+          <ul id="modalAnimalCareTips" style="list-style: disc; padding-left: 1.25rem; font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.6;"></ul>
+        </div>
+
+        <div style="margin-bottom: var(--space-lg);">
+          <h4 style="color: var(--color-primary-dark); margin-bottom: 0.35rem;">Feeding Overview</h4>
+          <p id="modalAnimalFeeding" style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.5;"></p>
+        </div>
+
+        <div style="margin-bottom: var(--space-lg);">
+          <h4 style="color: var(--color-primary-dark); margin-bottom: 0.35rem;">Common Health Concerns</h4>
+          <ul id="modalAnimalConcerns" style="list-style: square; padding-left: 1.25rem; font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.6;"></ul>
+        </div>
+
+        <!-- Clinical Red Flags Warning -->
+        <div class="vet-warning-box">
+          <h6>🚨 Clinical Red Flags — Consult a Veterinarian Immediately:</h6>
+          <p id="modalAnimalRedFlags"></p>
+        </div>
+
+        <div style="display: flex; gap: var(--space-sm); justify-content: flex-end; margin-top: var(--space-lg);">
+          <a href="nutrition.html" class="btn btn-outline btn-sm">View Nutrition Guide</a>
+          <a href="veterinarians.html" class="btn btn-primary btn-sm">Find a Vet</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       GLOBAL FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand">
+          <div class="brand-logo" style="margin-bottom: 0.5rem;">
+            <div class="logo-icon" style="background: var(--color-primary-light);">🐄</div>
+            <div class="brand-text-wrap">
+              <span class="brand-name">Smart Animal Care</span>
+              <span class="brand-tagline">Healthy Animals, Happy Farmers</span>
+            </div>
+          </div>
+          <p class="footer-desc">
+            An open educational livestock healthcare and management platform designed to empower dairy and smallholder livestock farmers with reliable veterinary knowledge.
+          </p>
+          <div class="student-project-pill">🎓 Academic College Project — 2026</div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Platform Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home Page</a></li>
+            <li><a href="animals.html">Animal Care Guides</a></li>
+            <li><a href="diseases.html">Livestock Disease Index</a></li>
+            <li><a href="nutrition.html">Nutrition & Feed Ration</a></li>
+            <li><a href="care-tips.html">Preventive Healthcare</a></li>
+            <li><a href="veterinarians.html">Find a Veterinarian</a></li>
+            <li><a href="contact.html">Project Info & Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Target Species</h4>
+          <ul class="footer-links">
+            <li><a href="animals.html">Dairy Cattle (Cow)</a></li>
+            <li><a href="animals.html">Water Buffalo</a></li>
+            <li><a href="animals.html">Goat (Small Ruminants)</a></li>
+            <li><a href="animals.html">Sheep & Flocks</a></li>
+            <li><a href="care-tips.html">Vaccine Schedules</a></li>
+            <li><a href="nutrition.html">Feed Calculator</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Emergency Helpline</h4>
+          <div class="footer-emergency-box">
+            <h5>National Animal Ambulance</h5>
+            <p>Toll-free emergency veterinary dispensary support across India.</p>
+            <a href="tel:1962" class="phone-number">📞 1962</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Smart Animal Care — Final Year Student Project. All rights reserved.</p>
+        <p>Built with HTML5, CSS3, & Vanilla JavaScript. No external dependencies.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" class="back-to-top" id="backToTop" aria-label="Scroll back to top">↑</button>
+  <script src="js/script.js" defer></script>
+</body>
+</html>

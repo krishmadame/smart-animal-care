@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Livestock Disease Guide — Symptoms, prevention, supportive first-aid care, and critical veterinary consultation warnings for common cattle, buffalo, goat, and sheep illnesses.">
+  <title>Livestock Disease Guide | Smart Animal Care</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       GLOBAL HEADER & NAVIGATION
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Smart Animal Care Home">
+        <div class="logo-icon" aria-hidden="true">🐄</div>
+        <div class="brand-text-wrap">
+          <span class="brand-name">Smart Animal Care</span>
+          <span class="brand-tagline" data-i18n="brand-tagline">Healthy Animals, Happy Farmers</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link" data-i18n="nav-home">Home</a>
+        <a href="animals.html" class="nav-link" data-i18n="nav-animals">Animals</a>
+        <a href="diseases.html" class="nav-link active" data-i18n="nav-diseases">Diseases</a>
+        <a href="nutrition.html" class="nav-link" data-i18n="nav-nutrition">Nutrition</a>
+        <a href="care-tips.html" class="nav-link" data-i18n="nav-care">Preventive Care</a>
+        <a href="veterinarians.html" class="nav-link" data-i18n="nav-vet">Find a Vet</a>
+        <a href="contact.html" class="nav-link" data-i18n="nav-contact">About / Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="lang-selector" aria-label="Select Language">
+          <button type="button" class="lang-btn active" data-lang="en">EN</button>
+          <button type="button" class="lang-btn" data-lang="hi">HI</button>
+          <button type="button" class="lang-btn" data-lang="mr">MR</button>
+        </div>
+        <a href="veterinarians.html" class="btn btn-primary btn-sm nav-cta-btn" data-i18n="cta-find-vet">
+          Find a Veterinarian
+        </a>
+        <button type="button" class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer">
+    <div class="brand-logo" style="margin-bottom: var(--space-md);">
+      <div class="logo-icon">🐄</div>
+      <div class="brand-text-wrap">
+        <span class="brand-name">Smart Animal Care</span>
+        <span class="brand-tagline">Healthy Animals, Happy Farmers</span>
+      </div>
+    </div>
+    <nav class="flex flex-col gap-sm">
+      <a href="index.html" class="nav-link mobile-nav-link">🏠 Home</a>
+      <a href="animals.html" class="nav-link mobile-nav-link">🐄 Animal Care</a>
+      <a href="diseases.html" class="nav-link mobile-nav-link active">🩺 Disease Guide</a>
+      <a href="nutrition.html" class="nav-link mobile-nav-link">🌾 Nutrition & Feed</a>
+      <a href="care-tips.html" class="nav-link mobile-nav-link">🛡️ Preventive Care</a>
+      <a href="veterinarians.html" class="nav-link mobile-nav-link">👨‍⚕️ Find a Vet</a>
+      <a href="contact.html" class="nav-link mobile-nav-link">📞 About & Contact</a>
+    </nav>
+    <div style="margin-top: auto; padding-top: var(--space-md); border-top: 1px solid var(--color-border);">
+      <a href="veterinarians.html" class="btn btn-primary btn-block">Find a Veterinarian</a>
+    </div>
+  </aside>
+
+  <!-- ========================================================================
+       PAGE BANNER
+       ======================================================================== -->
+  <div class="page-banner">
+    <div class="container banner-content">
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a> &gt; <span>Diseases</span>
+      </div>
+      <h1 class="page-banner-title">Livestock Disease Guide</h1>
+      <p class="page-banner-subtitle">
+        Understand common health concerns, clinical symptoms, preventive measures, and learn when professional veterinary help is urgent.
+      </p>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MAIN SECTION
+       ======================================================================== -->
+  <main class="section">
+    <div class="container">
+
+      <!-- Prominent Mandatory Educational Disclaimer -->
+      <div class="disclaimer-banner">
+        <div class="disclaimer-icon" aria-hidden="true">⚠️</div>
+        <div class="disclaimer-text">
+          <h4>Medical & Diagnostic Disclaimer</h4>
+          <p>
+            <strong>This information is for educational purposes only and should not be used as a substitute for professional veterinary diagnosis or treatment.</strong> Never administer prescription antibiotics or surgical procedures without veterinary supervision. If your animal is in acute pain, stops eating, or shows high fever, immediately contact a registered veterinarian.
+          </p>
+        </div>
+      </div>
+
+      <!-- Search & Filters Container -->
+      <div class="filter-search-container">
+        <div style="display: flex; gap: var(--space-md); flex-wrap: wrap;">
+          <div class="search-input-wrap">
+            <span class="search-icon">🔍</span>
+            <input 
+              type="text" 
+              id="diseaseSearchInput" 
+              class="search-input" 
+              placeholder="Search diseases or symptoms (e.g., FMD, Mastitis, fever, drooling, blisters, Galghontu, ticks)..."
+              aria-label="Search diseases"
+            >
+          </div>
+
+          <div style="min-width: 200px;">
+            <select id="diseaseSpeciesSelect" class="search-input" style="padding-left: 1rem;" aria-label="Filter by species">
+              <option value="all">All Affected Species</option>
+              <option value="cow">Cattle / Cow (गाय)</option>
+              <option value="buffalo">Water Buffalo (भैंस)</option>
+              <option value="goat">Goat (बकरी)</option>
+              <option value="sheep">Sheep (भेड़)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="filter-pills-wrap" role="tablist" aria-label="Filter diseases by category">
+          <button type="button" class="filter-pill disease-category-pill active" data-category="all">All Categories (10)</button>
+          <button type="button" class="filter-pill disease-category-pill" data-category="viral">Viral Infections</button>
+          <button type="button" class="filter-pill disease-category-pill" data-category="bacterial">Bacterial Diseases</button>
+          <button type="button" class="filter-pill disease-category-pill" data-category="parasitic">Parasitic & Tick-Borne</button>
+          <button type="button" class="filter-pill disease-category-pill" data-category="metabolic">Metabolic / Digestive</button>
+        </div>
+
+        <div class="results-meta">
+          <span id="diseaseResultsCount">Showing 10 of 10 documented diseases</span>
+          <a href="veterinarians.html" class="btn btn-secondary btn-sm">Find Emergency Veterinarian &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Disease Cards Grid -->
+      <div class="grid grid-2" id="diseaseGrid">
+
+        <!-- 1. FOOT AND MOUTH DISEASE (FMD) -->
+        <article class="disease-card" data-category="viral" data-species="cow buffalo goat sheep">
+          <div class="disease-header">
+            <div>
+              <span class="badge badge-danger">Viral Outbreak</span>
+              <h2 class="disease-name">Foot and Mouth Disease (FMD)</h2>
+              <span class="disease-vernacular">Vernacular: खुरपका-मुंहपका रोग</span>
+            </div>
+            <span class="badge badge-warning">High Contagion</span>
+          </div>
+
+          <div class="disease-target-species">
+            <span class="species-pill">Affects: Cow</span>
+            <span class="species-pill">Buffalo</span>
+            <span class="species-pill">Goat</span>
+            <span class="species-pill">Sheep</span>
+          </div>
+
+          <div class="disease-section-block">
+            <h5>🔍 Common Signs & Symptoms:</h5>
+            <div class="symptom-tag-list">
+              <span class="symptom-tag">High Fever (104°-106°F)</span>
+              <span class="symptom-tag">Excessive Ropy Salivation</span>
+              <span class="symptom-tag">Blisters on Tongue & Gums</span>
+              <span class="symptom-tag">Interdigital Hoof Lesions</span>
+              <span class="symptom-tag">Severe Lameness</span>
+              <span class="symptom-tag">Dramatic Milk Drop</span>
+            </div>
+          </div>
+
+          <div class="disease-section-block">
+            <h5>🛡️ Prevention:</h5>
+            <p class="prevention-text">
+              Bi-annual vaccination (pre-monsoon and post-monsoon) under the National Animal Disease Control Programme (NADCP). Quarantine new herd entries for 21 days. Disinfect shed gates with 4% sodium carbonate.
+            </p>
+          </div>
+
+          <div class="disease-section-block">
+            <h5>💊 Supportive First-Aid:</h5>
+            <p class="care-text">
+              Wash oral lesions with 1% potassium permanganate or alum solution. Apply boro-glycerine to mouth ulcers and apply neem/antiseptic ointment to hoof wounds to repel maggots. Provide soft gruel feed.
+            </p>
+          </div>
+
+          <div class="vet-warning-box">
+            <h6>🚨 When to Contact a Veterinarian:</h6>
+            <p>
+              Report outbreak immediately to the local government dispensary. Calves under 6 months can die suddenly from myocardial failure (tiger heart) without showing blisters.
+            </p>
+          </div>
+
+          <a href="veterinarians.html" class="btn btn-outline btn-sm btn-block">Find a Veterinarian Near You &rarr;</a>
+        </article>
+
+        <!-- 2. HEMORRHAGIC SEPTICEMIA (HS) -->
+        <article class="disease-card" data-category="bacterial" data-species="cow buffalo">
+          <div class="disease-header">
+            <div>
+              <span class="badge badge-danger">Acute Bacterial</span>
+              <h2 class="disease-name">Hemorrhagic Septicemia (HS)</h2>
+              <span class="disease-vernacular">Vernacular: गलघोंटू रोग (Pasteurellosis)</span>
+            </div>
+            <span class="badge badge-danger">High Fatality</span>
+          </div>
+
+          <div class="disease-target-species">
+            <span class="species-pill">Affects: Buffalo (Highly Sensitive)</span>
+            <span class="species-pill">Cow</span>
+          </div>
+
+          <div class="disease-section-block">
+            <h5>🔍 Common Signs & Symptoms:</h5>
+            <div class="symptom-tag-list">
+              <span class="symptom-tag">Very High Fever (106°-107°F)</span>
+              <span class="symptom-tag">Swollen Hot Throat & Brisket</span>
+              <span class="symptom-tag">Severe Labored Grunting Breath</span>
+              <span class="symptom-tag">Swollen Tongue Protruding</span>
+              <span class="symptom-tag">Profuse Salivation</span>
+              <span class="symptom-tag">Collapse within 24 Hours</span>
+            </div>
+          </div>
+
+          <div class="disease-section-block">
+            <h5>🛡️ Prevention:</h5>
+            <p class="prevention-text">
+              Annual vaccination with HS alum-precipitated vaccine strictly prior to monsoon onset (May-June). Avoid working draught animals in heavy rain or swampy pastures during outbreaks.
+            </p>
+          </div>
+
+          <div class="disease-section-block">
+            <h5>💊 Supportive First-Aid:</h5>
+            <p class="care-text">
+              Isolate the sick animal in a cool, dry area. Keep the head elevated to ease airway obstruction. Do not force-drench liquids as fluid can enter the lungs due to pharyngeal swelling.
+            </p>
+          </div>
+
+          <div class="vet-warning-box">
+            <h6>🚨 When to Contact a Veterinarian:</h6>
+            <p>
+              EMERGENCY! Death can occur within 12 to 36 hours. A veterinarian must immediately administer IV broad-spectrum antibiotics (sulfa drugs / oxytetracycline) in the earliest febrile stage.
+            </p>
+          </div>
+
+          <a href="veterinarians.html" class="btn btn-emergency btn-sm btn-block">Contact Veterinarian Urgently &rarr;</a>
+        </article>
+
+        <!-- 3. BOVINE MASTITIS -->
+        <article class="disease-card" data-category="bacterial" data-species="cow buffalo">
+          <div class="disease-header">
+            <div>
+              <span class="badge badge-warning">Lactation Infection</span>
+              <h2 class="disease-name">Bovine Mastitis</h2>
+              <span class="disease-vernacular">Vernacular: थनैला रोग (Udder Inflammation)</span>
+            </div>
+            <span class="badge badge-warning">Economic Loss</span>
+          </div>
+
+          <div class="disease-target-species">
+            <span class="species-pill">Affects: High-Yielding Cow</span>
+            <span class="species-pill">Buffalo</span>
+          </div>
+
+          <div class="disease-section-block">
+            <h5>🔍 Common Signs & Symptoms:</h5>
+            <div class="symptom-tag-list">
+              <span class="symptom-tag">Hot, Hard, Swollen Quarter</span>
+              <span class="symptom-tag">Curd-like Flakes or Clots in Milk</span>
+              <span class="symptom-tag">Watery or Blood-Stained Milk</span>
+              <span class="symptom-tag">Cow Kicking During Milking</span>
+              <span class="symptom-tag">Fever & Loss of Appetite</span>
+            </div>
+          </div>
+
+          <div class="disease-section-block">
+            <h5>🛡️ Prevention:</h5>
+            <p class="prevention-text">
+              Dry cow therapy. Practice teat dipping with iodine post-milking. Keep milking platform spotless. Ensure cows stand for at least 30-45 minutes after milking by offering fresh feed while teat canals seal.
+            </p>
+          </div>
+
+          <div class="disease-section-block">
+            <h5>💊 Supportive First-Aid:</h5>
+            <p class="care-text">
+              Perform frequent strip milking of the infected quarter (every 2 hours) and discard infected milk safely. Apply cold compresses or ice packs to reduce acute swelling.
+            </p>
+          </div>
+
+          <div class="vet-warning-box">
+            <h6>🚨 When to Contact a Veterinarian:</h6>
+            <p>
+              Immediately at the first sign of clots or udder hardness. Delay causes permanent quarter fibrosis or gangrenous mastitis. Antibiotic susceptibility testing is recommended before intramammary infusions.
+            </p>
+          </div>
+
+          <a href="veterinarians.html" class="btn btn-outline btn-sm btn-block">Find a Veterinarian Near You &rarr;</a>
+        </article>
+
+        <!-- 4. LUMPY SKIN DISEASE (LSD) -->
+        <article class="disease-card" data-category="viral" data-species="cow buffalo">
+          <div class="disease-header">
+            <div>
+              <span class="badge badge-danger">Vector-Borne Viral</span>
+              <h2 class="disease-name">Lumpy Skin Disease (LSD)</h2>
+              <span class="disease-vernacular">Vernacular: लंपी त्वचा रोग</span>
+            </div>
+            <span class="badge badge-warning">High Morbidity</span>
+          </div>
+
+          <div class="disease-target-species">
+            <span class="species-pill">Affects: Cow (Severe in Indigenous & Crossbreds)</span>
+            <span class="species-pill">Buffalo</span>
+          </div>
+
+          <div class="disease-section-block">
+            <h5>🔍 Common Signs & Symptoms:</h5>
+            <div class="symptom-tag-list">
+              <span class="symptom-tag">Firm Round Nodules (2-5cm) on Skin</span>
+              <span class="symptom-tag">High Fever (105°F)</span>
+              <span class="symptom-tag">Watery Eyes & Nasal Discharge</span>
+              <span class="symptom-tag">Swollen Legs & Dewlap Edema</span>
+              <span class="symptom-tag">Deep Ulcers (Sit-fasts)</span>
+            </div>
+          </div>
+
+          <div class="disease-section-block">
+            <h5>🛡️ Prevention:</h5>
+            <p class="prevention-text">
+              Heterologous vaccination using Goat Pox vaccine (or Lumpi-ProVacInd). Stringent fly, mosquito, and tick control using neem oil sprays, fly traps, and biosecurity isolation.
+            </p>
+          </div>
+
+          <div class="disease-section-block">
+            <h5>💊 Supportive First-Aid:</h5>
+            <p class="care-text">
+              Clean burst nodules with betadine solution and apply herbal fly-repellent ointments. Provide tender green grass, electrolyte water, and immunity boosters (turmeric, amla, vitamin E & selenium).
+            </p>
+          </div>
+
+          <div class="vet-warning-box">
+            <h6>🚨 When to Contact a Veterinarian:</h6>
+            <p>
+              Seek veterinary care for anti-inflammatory injections to control pain and secondary bacterial pneumonia. Respiratory distress and throat nodules require emergency care.
+            </p>
+          </div>
+
+          <a href="veterinarians.html" class="btn btn-outline btn-sm btn-block">Find a Veterinarian Near You &rarr;</a>
+        </article>
+
+        <!-- 5. BLACK QUARTER (BQ) -->
+        <article class="disease-card" data-category="bacterial" data-species="cow buffalo">
+          <div class="disease-header">
+            <div>
+              <span class="badge badge-danger">Spore Bacterial</span>
+              <h2 class="disease-name">Black Quarter (BQ)</h2>
+              <span class="disease-vernacular">Vernacular: लंगड़ा बुखार / जहरबाद</span>
+            </div>
+            <span class="badge badge-danger">Rapid Onset</span>
+          </div>
+
+          <div class="disease-target-species">
+            <span class="species-pill">Affects: Cattle (6 months - 2 years young stock)</span>
+            <span class="species-pill">Buffalo</span>
+          </div>
+
+          <div class="disease-section-block">
+            <h5>🔍 Common Signs & Symptoms:</h5>
+            <div class="symptom-tag-list">
+              <span class="symptom-tag">Sudden Severe Lameness</span>
+              <span class="symptom-tag">Hot Swelling on Thigh or Shoulder</span>
+              <span class="symptom-tag">Crepitus (Cracking Sound on Pressing)</span>
+              <span class="symptom-tag">High Initial Fever (105°F)</span>
+              <span class="symptom-tag">Dry, Cold Skin over Swelling</span>
+            </div>
+          </div>
+
+          <div class="disease-section-block">
+            <h5>🛡️ Prevention:</h5>
+            <p class="prevention-text">
+              Annual vaccination of young calves (above 6 months) in May before monsoon rains. Avoid grazing over excavated pasture soils where Clostridium chauvoei spores persist for decades.
+            </p>
+          </div>
+
+          <div class="disease-section-block">
+            <h5>💊 Supportive First-Aid:</h5>
+            <p class="care-text">
+              Strictly isolate the animal. Keep bedding soft. Never incise the swelling yourself as escaping spores can contaminate the soil permanently for other livestock.
+            </p>
+          </div>
+
+          <div class="vet-warning-box">
+            <h6>🚨 When to Contact a Veterinarian:</h6>
+            <p>
+              Emergency intervention is needed within hours. Penicillin group antibiotics must be injected parenterally and infiltrated around the muscle lesion by a vet before toxemia sets in.
+            </p>
+          </div>
+
+          <a href="veterinarians.html" class="btn btn-outline btn-sm btn-block">Find a Veterinarian Near You &rarr;</a>
+        </article>
+
+        <!-- 6. PESTE DES PETITS RUMINANTS (PPR) -->
+        <article class="disease-card" data-category="viral" data-species="goat sheep">
+          <div class="disease-header">
+            <div>
+              <span class="badge badge-danger">Contagious Viral</span>
+              <h2 class="disease-name">Peste des Petits Ruminants (PPR)</h2>
+              <span class="disease-vernacular">Vernacular: बकरी प्लेग (Goat Plague)</span>
+            </div>
+            <span class="badge badge-danger">Deadly in Goats</span>
+          </div>
+
+          <div class="disease-target-species">
+            <span class="species-pill">Affects: Goat (Extremely Sensitive)</span>
+            <span class="species-pill">Sheep</span>
+          </div>
+
+          <div class="disease-section-block">
+            <h5>🔍 Common Signs & Symptoms:</h5>
+            <div class="symptom-tag-list">
+              <span class="symptom-tag">Sudden High Fever (104°-106°F)</span>
+              <span class="symptom-tag">Erosive Ulcers on Gums & Lips</span>
+              <span class="symptom-tag">Foul-Smelling Watery Diarrhea</span>
+              <span class="symptom-tag">Crusted Matted Eyes & Nose</span>
+              <span class="symptom-tag">Pneumonia & Rapid Breathing</span>
+            </div>
+          </div>
+
+          <div class="disease-section-block">
+            <h5>🛡️ Prevention:</h5>
+            <p class="prevention-text">
+              PPR live-attenuated vaccine administered at 3-4 months of age provides lasting immunity for 3 years. Quarantine newly bought goats from livestock markets for 15 days before introducing to flock.
+            </p>
+          </div>
+
+          <div class="disease-section-block">
+            <h5>💊 Supportive First-Aid:</h5>
+            <p class="care-text">
+              Clean crusty eyes and nostrils with warm saline. Clean oral erosions with 0.1% potassium permanganate solution. Provide warm oral rehydration solution (ORS) with electrolytes to combat dehydration.
+            </p>
+          </div>
+
+          <div class="vet-warning-box">
+            <h6>🚨 When to Contact a Veterinarian:</h6>
+            <p>
+              Mortality can reach 80% in unprotected goat flocks. Immediate veterinary administration of fluids, broad-spectrum antibiotics for secondary pneumonia, and anti-inflammatories is crucial.
+            </p>
+          </div>
+
+          <a href="veterinarians.html" class="btn btn-outline btn-sm btn-block">Find a Veterinarian Near You &rarr;</a>
+        </article>
+
+        <!-- 7. ACUTE BLOAT / TYMPANITES -->
+        <article class="disease-card" data-category="metabolic" data-species="cow buffalo goat sheep">
+          <div class="disease-header">
+            <div>
+              <span class="badge badge-warning">Digestive Emergency</span>
+              <h2 class="disease-name">Acute Bloat / Ruminal Tympany</h2>
+              <span class="disease-vernacular">Vernacular: अफारा (Rumen Gas Distension)</span>
+            </div>
+            <span class="badge badge-danger">Immediate Risk</span>
+          </div>
+
+          <div class="disease-target-species">
+            <span class="species-pill">Affects: Cow</span>
+            <span class="species-pill">Buffalo</span>
+            <span class="species-pill">Goat</span>
+            <span class="species-pill">Sheep</span>
+          </div>
+
+          <div class="disease-section-block">
+            <h5>🔍 Common Signs & Symptoms:</h5>
+            <div class="symptom-tag-list">
+              <span class="symptom-tag">Distended Left Flank (Drum-like)</span>
+              <span class="symptom-tag">Restlessness & Kicking at Belly</span>
+              <span class="symptom-tag">Mouth Breathing & Protruding Tongue</span>
+              <span class="symptom-tag">Panting with Frequent Urination</span>
+              <span class="symptom-tag">Grunting on Exhalation</span>
+            </div>
+          </div>
+
+          <div class="disease-section-block">
+            <h5>🛡️ Prevention:</h5>
+            <p class="prevention-text">
+              Never turn hungry animals out onto lush dewy legume pasture (alfalfa/berseem). Feed dry straw prior to green forage. Avoid sudden changes in grain rations or access to moldy carbohydrate garbage.
+            </p>
+          </div>
+
+          <div class="disease-section-block">
+            <h5>💊 Supportive First-Aid:</h5>
+            <p class="care-text">
+              Tie a wooden bit in the mouth to encourage chewing and salivation. Walk the animal slowly uphill. Administer 200-300 ml of vegetable cooking oil (mustard or groundnut oil) or antifoaming bloat drench.
+            </p>
+          </div>
+
+          <div class="vet-warning-box">
+            <h6>🚨 When to Contact a Veterinarian:</h6>
+            <p>
+              CRITICAL EMERGENCY: Severe bloat compresses the lungs and diaphragm, causing asphyxiation within 1-2 hours. A vet must relieve pressure via stomach tube or trocar-cannula in the left paralumbar fossa.
+            </p>
+          </div>
+
+          <a href="veterinarians.html" class="btn btn-emergency btn-sm btn-block">Find Emergency Vet Assistance &rarr;</a>
+        </article>
+
+        <!-- 8. ANTHRAX -->
+        <article class="disease-card" data-category="bacterial" data-species="cow buffalo goat sheep">
+          <div class="disease-header">
+            <div>
+              <span class="badge badge-danger">Peracute Zoonosis</span>
+              <h2 class="disease-name">Anthrax (Bacillus anthracis)</h2>
+              <span class="disease-vernacular">Vernacular: चिरचिटा / गिल्टी रोग</span>
+            </div>
+            <span class="badge badge-danger">Notifiable Disease</span>
+          </div>
+
+          <div class="disease-target-species">
+            <span class="species-pill">Affects: Cow</span>
+            <span class="species-pill">Buffalo</span>
+            <span class="species-pill">Goat</span>
+            <span class="species-pill">Sheep</span>
+          </div>
+
+          <div class="disease-section-block">
+            <h5>🔍 Common Signs & Symptoms:</h5>
+            <div class="symptom-tag-list">
+              <span class="symptom-tag">Sudden Death with No Prior Signs</span>
+              <span class="symptom-tag">Dark Tar-like Non-clotting Blood from Orifices</span>
+              <span class="symptom-tag">Absence of Rigor Mortis (Stiffness)</span>
+              <span class="symptom-tag">Severe Bloating Post-Mortem</span>
+            </div>
+          </div>
+
+          <div class="disease-section-block">
+            <h5>🛡️ Prevention:</h5>
+            <p class="prevention-text">
+              Annual spore vaccination in known endemic zones. Strictly NEVER open or skin a carcass suspected of Anthrax; exposure to air triggers spore formation which contaminates land for 50+ years.
+            </p>
+          </div>
+
+          <div class="disease-section-block">
+            <h5>💊 Supportive First-Aid:</h5>
+            <p class="care-text">
+              Do not touch body fluids! Deeply bury dead animals (at least 6-8 feet deep) sealed with quicklime, or arrange sanitary carcass incineration.
+            </p>
+          </div>
+
+          <div class="vet-warning-box">
+            <h6>🚨 When to Contact a Veterinarian:</h6>
+            <p>
+              Notify government veterinary authorities immediately. It is dangerous to human handlers (zoonotic). Surviving herd contacts require urgent post-exposure prophylaxis.
+            </p>
+          </div>
+
+          <a href="veterinarians.html" class="btn btn-emergency btn-sm btn-block">Report to Nearest Dispensary &rarr;</a>
+        </article>
+
+        <!-- 9. BABESIOSIS (TICK FEVER) -->
+        <article class="disease-card" data-category="parasitic" data-species="cow buffalo">
+          <div class="disease-header">
+            <div>
+              <span class="badge badge-info">Protozoan / Tick</span>
+              <h2 class="disease-name">Babesiosis (Redwater Fever)</h2>
+              <span class="disease-vernacular">Vernacular: चिचड़ी बुखार / लाल पेशाब</span>
+            </div>
+            <span class="badge badge-warning">High Fever</span>
+          </div>
+
+          <div class="disease-target-species">
+            <span class="species-pill">Affects: Cow (Crossbreds Highly Susceptible)</span>
+            <span class="species-pill">Buffalo</span>
+          </div>
+
+          <div class="disease-section-block">
+            <h5>🔍 Common Signs & Symptoms:</h5>
+            <div class="symptom-tag-list">
+              <span class="symptom-tag">High Fever (105°-107°F)</span>
+              <span class="symptom-tag">Coffee / Reddish-Brown Urine</span>
+              <span class="symptom-tag">Pale or Yellowish Eye Mucosa (Jaundice)</span>
+              <span class="symptom-tag">Extreme Weakness & Tremors</span>
+              <span class="symptom-tag">Heavy Tick Infestation</span>
+            </div>
+          </div>
+
+          <div class="disease-section-block">
+            <h5>🛡️ Prevention:</h5>
+            <p class="prevention-text">
+              Regular acaricide spraying (Deltamethrin, Amitraz) on animals and shed walls/cracks. Eliminate tick vectors, shear overgrown hair, and avoid introducing tick-laden cattle into clean herds.
+            </p>
+          </div>
+
+          <div class="disease-section-block">
+            <h5>💊 Supportive First-Aid:</h5>
+            <p class="care-text">
+              Keep the sick animal in shade. Offer fresh clean water with molasses/jaggery for glucose support and fresh soft green grass. Remove ticks manually using gloves and tweezers.
+            </p>
+          </div>
+
+          <div class="vet-warning-box">
+            <h6>🚨 When to Contact a Veterinarian:</h6>
+            <p>
+              Rapid red blood cell destruction causes fatal anemia. A veterinarian must immediately administer specific antiprotozoal drugs (Diminazene aceturate or Imidocarb dipropionate) along with hematinics.
+            </p>
+          </div>
+
+          <a href="veterinarians.html" class="btn btn-outline btn-sm btn-block">Find a Veterinarian Near You &rarr;</a>
+        </article>
+
+        <!-- 10. ENTEROTOXEMIA (ET) -->
+        <article class="disease-card" data-category="bacterial" data-species="goat sheep">
+          <div class="disease-header">
+            <div>
+              <span class="badge badge-danger">Clostridial Toxin</span>
+              <h2 class="disease-name">Enterotoxemia (Pulpy Kidney)</h2>
+              <span class="disease-vernacular">Vernacular: फिड़किया रोग (Overeating Disease)</span>
+            </div>
+            <span class="badge badge-danger">Peracute Course</span>
+          </div>
+
+          <div class="disease-target-species">
+            <span class="species-pill">Affects: Sheep</span>
+            <span class="species-pill">Goat</span>
+          </div>
+
+          <div class="disease-section-block">
+            <h5>🔍 Common Signs & Symptoms:</h5>
+            <div class="symptom-tag-list">
+              <span class="symptom-tag">Sudden Death of Best Thriving Lambs</span>
+              <span class="symptom-tag">Convulsions & Head Retraction (Opisthotonos)</span>
+              <span class="symptom-tag">Frothing at Mouth</span>
+              <span class="symptom-tag">Teeth Grinding & Incoordination</span>
+            </div>
+          </div>
+
+          <div class="disease-section-block">
+            <h5>🛡️ Prevention:</h5>
+            <p class="prevention-text">
+              Vaccinate pregnant ewes/does 2-4 weeks before lambing and kids/lambs at 2 months of age. Avoid sudden changes to heavy cereal grains or rich pasture flush without adaptation.
+            </p>
+          </div>
+
+          <div class="disease-section-block">
+            <h5>💊 Supportive First-Aid:</h5>
+            <p class="care-text">
+              Immediately withhold rich concentrates and lush forage. Provide high-fiber coarse hay. Feed oral antacids or baking soda solution to reduce ruminal acidity.
+            </p>
+          </div>
+
+          <div class="vet-warning-box">
+            <h6>🚨 When to Contact a Veterinarian:</h6>
+            <p>
+              Toxins produced by Clostridium perfringens act rapidly. In early stages, a veterinarian can inject hyperimmune antiserum, pain relievers, and protective antitoxins.
+            </p>
+          </div>
+
+          <a href="veterinarians.html" class="btn btn-outline btn-sm btn-block">Find a Veterinarian Near You &rarr;</a>
+        </article>
+
+      </div>
+
+      <!-- No Results State -->
+      <div id="diseaseNoResults" class="no-results-box">
+        <div class="no-results-icon">🩺</div>
+        <h3>No Matching Diseases Found</h3>
+        <p class="text-muted" style="margin-bottom: var(--space-md);">
+          Try searching with broader terms like "fever", "cough", "ticks", "fmd", or reset the category filter.
+        </p>
+        <button type="button" class="btn btn-outline btn-sm" onclick="document.getElementById('diseaseSearchInput').value=''; document.getElementById('diseaseSpeciesSelect').value='all'; document.querySelector('.disease-category-pill[data-category=\'all\']').click();">
+          Reset All Filters
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ========================================================================
+       GLOBAL FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand">
+          <div class="brand-logo" style="margin-bottom: 0.5rem;">
+            <div class="logo-icon" style="background: var(--color-primary-light);">🐄</div>
+            <div class="brand-text-wrap">
+              <span class="brand-name">Smart Animal Care</span>
+              <span class="brand-tagline">Healthy Animals, Happy Farmers</span>
+            </div>
+          </div>
+          <p class="footer-desc">
+            An open educational livestock healthcare and management platform designed to empower dairy and smallholder livestock farmers with reliable veterinary knowledge.
+          </p>
+          <div class="student-project-pill">🎓 Academic College Project — 2026</div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Platform Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home Page</a></li>
+            <li><a href="animals.html">Animal Care Guides</a></li>
+            <li><a href="diseases.html">Livestock Disease Index</a></li>
+            <li><a href="nutrition.html">Nutrition & Feed Ration</a></li>
+            <li><a href="care-tips.html">Preventive Healthcare</a></li>
+            <li><a href="veterinarians.html">Find a Veterinarian</a></li>
+            <li><a href="contact.html">Project Info & Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Target Species</h4>
+          <ul class="footer-links">
+            <li><a href="animals.html">Dairy Cattle (Cow)</a></li>
+            <li><a href="animals.html">Water Buffalo</a></li>
+            <li><a href="animals.html">Goat (Small Ruminants)</a></li>
+            <li><a href="animals.html">Sheep & Flocks</a></li>
+            <li><a href="care-tips.html">Vaccine Schedules</a></li>
+            <li><a href="nutrition.html">Feed Calculator</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Emergency Helpline</h4>
+          <div class="footer-emergency-box">
+            <h5>National Animal Ambulance</h5>
+            <p>Toll-free emergency veterinary dispensary support across India.</p>
+            <a href="tel:1962" class="phone-number">📞 1962</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Smart Animal Care — Final Year Student Project. All rights reserved.</p>
+        <p>Built with HTML5, CSS3, & Vanilla JavaScript. No external dependencies.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button type="button" class="back-to-top" id="backToTop" aria-label="Scroll back to top">↑</button>
+  <script src="js/script.js" defer></script>
+</body>
+</html>

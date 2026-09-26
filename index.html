@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Smart Animal Care — An animal healthcare information platform designed for farmers and livestock owners. Access cattle care, disease guides, balanced nutrition, and veterinary assistance.">
+  <title>Smart Animal Care | Healthy Animals, Happy Farmers</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       GLOBAL HEADER & NAVIGATION
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="Smart Animal Care Home">
+        <div class="logo-icon" aria-hidden="true">🐄</div>
+        <div class="brand-text-wrap">
+          <span class="brand-name">Smart Animal Care</span>
+          <span class="brand-tagline" data-i18n="brand-tagline">Healthy Animals, Happy Farmers</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link active" data-i18n="nav-home">Home</a>
+        <a href="animals.html" class="nav-link" data-i18n="nav-animals">Animals</a>
+        <a href="diseases.html" class="nav-link" data-i18n="nav-diseases">Diseases</a>
+        <a href="nutrition.html" class="nav-link" data-i18n="nav-nutrition">Nutrition</a>
+        <a href="care-tips.html" class="nav-link" data-i18n="nav-care">Preventive Care</a>
+        <a href="veterinarians.html" class="nav-link" data-i18n="nav-vet">Find a Vet</a>
+        <a href="contact.html" class="nav-link" data-i18n="nav-contact">About / Contact</a>
+      </nav>
+
+      <!-- Header Actions: Language & CTA -->
+      <div class="header-actions">
+        <!-- Language Selector -->
+        <div class="lang-selector" aria-label="Select Language">
+          <button type="button" class="lang-btn active" data-lang="en" title="English">EN</button>
+          <button type="button" class="lang-btn" data-lang="hi" title="हिंदी">HI</button>
+          <button type="button" class="lang-btn" data-lang="mr" title="मराठी">MR</button>
+        </div>
+
+        <!-- CTA Button -->
+        <a href="veterinarians.html" class="btn btn-primary btn-sm nav-cta-btn" data-i18n="cta-find-vet">
+          Find a Veterinarian
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button type="button" class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-label="Mobile Navigation">
+    <div class="brand-logo" style="margin-bottom: var(--space-md);">
+      <div class="logo-icon">🐄</div>
+      <div class="brand-text-wrap">
+        <span class="brand-name">Smart Animal Care</span>
+        <span class="brand-tagline">Healthy Animals, Happy Farmers</span>
+      </div>
+    </div>
+    <nav class="flex flex-col gap-sm">
+      <a href="index.html" class="nav-link mobile-nav-link active">🏠 Home</a>
+      <a href="animals.html" class="nav-link mobile-nav-link">🐄 Animal Care</a>
+      <a href="diseases.html" class="nav-link mobile-nav-link">🩺 Disease Guide</a>
+      <a href="nutrition.html" class="nav-link mobile-nav-link">🌾 Nutrition & Feed</a>
+      <a href="care-tips.html" class="nav-link mobile-nav-link">🛡️ Preventive Care</a>
+      <a href="veterinarians.html" class="nav-link mobile-nav-link">👨‍⚕️ Find a Vet</a>
+      <a href="contact.html" class="nav-link mobile-nav-link">📞 About & Contact</a>
+    </nav>
+    <div style="margin-top: auto; padding-top: var(--space-md); border-top: 1px solid var(--color-border);">
+      <a href="veterinarians.html" class="btn btn-primary btn-block">
+        Find a Veterinarian
+      </a>
+      <p style="font-size: 0.775rem; color: var(--color-text-light); text-align: center; margin-top: 0.5rem;">
+        National Animal Helpline: <strong>1962</strong>
+      </p>
+    </div>
+  </aside>
+
+  <!-- ========================================================================
+       MAIN CONTENT
+       ======================================================================== -->
+  <main id="mainContent">
+
+    <!-- 1. HERO SECTION -->
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span>🌿</span> <span>Farmer-Friendly Digital Health Platform</span>
+          </div>
+          <h1 class="hero-title" data-i18n="hero-heading">
+            Healthy Animals, <br><span>Happy Farmers</span>
+          </h1>
+          <h2 class="hero-subheading" data-i18n="hero-subheading">
+            Your Livestock’s Health Matters
+          </h2>
+          <p class="hero-text" data-i18n="hero-text">
+            Access animal healthcare information, nutrition guidance, preventive care tips and veterinary assistance in one place. Built specifically to empower dairy, livestock, and smallholder farmers.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="animals.html" class="btn btn-primary" data-i18n="explore-care">
+              Explore Animal Care &rarr;
+            </a>
+            <a href="veterinarians.html" class="btn btn-outline" data-i18n="cta-find-vet">
+              Find a Veterinarian
+            </a>
+          </div>
+
+          <!-- Hero Highlights / Stats -->
+          <div class="hero-stats-row">
+            <div class="stat-item">
+              <h3>4 Major</h3>
+              <p>Livestock Species</p>
+            </div>
+            <div class="stat-item">
+              <h3>15+ Diseases</h3>
+              <p>Symptoms & First Aid</p>
+            </div>
+            <div class="stat-item">
+              <h3>100% Free</h3>
+              <p>Educational Platform</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual Card -->
+        <div class="hero-image-card">
+          <img src="images/hero-farm.jpg" alt="Indian livestock cattle grazing on a healthy pasture under farmer supervision" loading="lazy">
+          <div class="floating-vet-badge">
+            <span class="badge-icon">🛡️</span>
+            <div>
+              <h5>Evidence-Based Care</h5>
+              <p>Educational guidance verified with veterinary protocols</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. PROMINENT EDUCATIONAL DISCLAIMER BANNER -->
+    <div class="container" style="margin-top: -15px;">
+      <div class="disclaimer-banner">
+        <div class="disclaimer-icon" aria-hidden="true">⚠️</div>
+        <div class="disclaimer-text">
+          <h4 data-i18n="disclaimer-title">Important Veterinary Notice</h4>
+          <p data-i18n="disclaimer-text">
+            This information is for educational purposes only and should not be used as a substitute for professional veterinary diagnosis or treatment. For disease symptoms, prescription medications, or acute emergencies, always consult a qualified veterinarian promptly.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. QUICK ACCESS SECTION -->
+    <section class="section section-bg-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Essential Services</span>
+          <h2 class="section-title" data-i18n="quick-access-title">Essential Livestock Healthcare Services</h2>
+          <p class="section-subtitle">
+            Everything a farmer needs to maintain herd health, boost milk yield, and act quickly during disease outbreaks.
+          </p>
+        </div>
+
+        <div class="grid grid-4">
+          <!-- Card 1: Veterinary Help -->
+          <div class="quick-access-card">
+            <div class="qa-icon-wrap" aria-hidden="true">👨‍⚕️</div>
+            <h3 class="qa-title">Veterinary Help</h3>
+            <p class="qa-desc">
+              Get access to veterinary assistance, government polyclinics, and verified local doctor contact information.
+            </p>
+            <a href="veterinarians.html" class="btn btn-outline btn-sm">Find Clinics &rarr;</a>
+          </div>
+
+          <!-- Card 2: Disease Guide -->
+          <div class="quick-access-card">
+            <div class="qa-icon-wrap" aria-hidden="true">🩺</div>
+            <h3 class="qa-title">Disease Guide</h3>
+            <p class="qa-desc">
+              Learn about common livestock diseases, early symptoms, critical warning signs, and practical prevention.
+            </p>
+            <a href="diseases.html" class="btn btn-outline btn-sm">Disease Library &rarr;</a>
+          </div>
+
+          <!-- Card 3: Nutrition Guide -->
+          <div class="quick-access-card">
+            <div class="qa-icon-wrap" aria-hidden="true">🌾</div>
+            <h3 class="qa-title">Nutrition Guide</h3>
+            <p class="qa-desc">
+              Explore animal-specific feeding, green fodder balance, dry roughage, and calculate custom daily feed rations.
+            </p>
+            <a href="nutrition.html" class="btn btn-outline btn-sm">Feeding Guides &rarr;</a>
+          </div>
+
+          <!-- Card 4: Preventive Care -->
+          <div class="quick-access-card">
+            <div class="qa-icon-wrap" aria-hidden="true">🛡️</div>
+            <h3 class="qa-title">Preventive Care</h3>
+            <p class="qa-desc">
+              Learn practical preventive healthcare, vaccination timetables, housing hygiene, and track shot reminders.
+            </p>
+            <a href="care-tips.html" class="btn btn-outline btn-sm">Preventive Tips &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. LIVESTOCK SPECIES PREVIEW -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Species Guidance</span>
+          <h2 class="section-title">Animal-Specific Healthcare</h2>
+          <p class="section-subtitle">
+            Tailored management practices for cattle, buffaloes, goats, and sheep.
+          </p>
+        </div>
+
+        <div class="grid grid-4">
+          <!-- Cow Card -->
+          <div class="animal-card">
+            <div class="animal-card-img-wrap">
+              <img src="images/cow.jpg" alt="Healthy dairy cow" loading="lazy">
+              <span class="badge badge-primary animal-card-tag">Dairy & Draught</span>
+            </div>
+            <div class="animal-card-body">
+              <h3 class="animal-title">Dairy Cow (गाय)</h3>
+              <p class="animal-desc">
+                High milk production management, mastitis vigilance, balanced dry matter intake, and lactation cycles.
+              </p>
+              <div class="animal-card-footer">
+                <a href="animals.html" class="btn btn-outline btn-sm btn-block">Explore Cow Care &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Buffalo Card -->
+          <div class="animal-card">
+            <div class="animal-card-img-wrap">
+              <img src="images/buffalo.jpg" alt="Water buffalo in countryside" loading="lazy">
+              <span class="badge badge-primary animal-card-tag">High Fat Milk</span>
+            </div>
+            <div class="animal-card-body">
+              <h3 class="animal-title">Water Buffalo (भैंस)</h3>
+              <p class="animal-desc">
+                Heat stress mitigation, wallowing requirements, silent heat detection, and high-roughage feed utilization.
+              </p>
+              <div class="animal-card-footer">
+                <a href="animals.html" class="btn btn-outline btn-sm btn-block">Explore Buffalo Care &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Goat Card -->
+          <div class="animal-card">
+            <div class="animal-card-img-wrap">
+              <img src="images/goat.jpg" alt="Healthy domestic goat" loading="lazy">
+              <span class="badge badge-primary animal-card-tag">Small Ruminant</span>
+            </div>
+            <div class="animal-card-body">
+              <h3 class="animal-title">Domestic Goat (बकरी)</h3>
+              <p class="animal-desc">
+                Browsing pasture habits, raised dry floor shelter, PPR vaccination awareness, and internal parasite control.
+              </p>
+              <div class="animal-card-footer">
+                <a href="animals.html" class="btn btn-outline btn-sm btn-block">Explore Goat Care &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sheep Card -->
+          <div class="animal-card">
+            <div class="animal-card-img-wrap">
+              <img src="images/sheep.jpg" alt="Healthy sheep in green pasture" loading="lazy">
+              <span class="badge badge-primary animal-card-tag">Wool & Meat</span>
+            </div>
+            <div class="animal-card-body">
+              <h3 class="animal-title">Domestic Sheep (भेड़)</h3>
+              <p class="animal-desc">
+                Flock grazing, fleece shearing hygiene, foot rot eradication, and copper toxicity prevention.
+              </p>
+              <div class="animal-card-footer">
+                <a href="animals.html" class="btn btn-outline btn-sm btn-block">Explore Sheep Care &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. WHY SMART ANIMAL CARE? -->
+    <section class="section section-bg-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Platform Purpose</span>
+          <h2 class="section-title">Why Smart Animal Care?</h2>
+          <p class="section-subtitle">
+            Designed to bridge the gap between complex veterinary science and daily farm management.
+          </p>
+        </div>
+
+        <div class="grid grid-2">
+          <div class="feature-item-card">
+            <div class="feature-number">1</div>
+            <div>
+              <h3 style="font-size: 1.25rem; margin-bottom: 0.35rem; color: var(--color-primary-dark);">
+                Easy Access to Information
+              </h3>
+              <p style="color: var(--color-text-muted); font-size: 0.95rem;">
+                Straightforward, farmer-centric language without medical jargon. Quick answers to day-to-day feeding, housing, and hygiene questions.
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-item-card">
+            <div class="feature-number">2</div>
+            <div>
+              <h3 style="font-size: 1.25rem; margin-bottom: 0.35rem; color: var(--color-primary-dark);">
+                Animal-Specific Guidance
+              </h3>
+              <p style="color: var(--color-text-muted); font-size: 0.95rem;">
+                Cattle, buffaloes, goats, and sheep have unique digestive anatomies, gestation periods, and temperature baselines. We provide species-accurate data.
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-item-card">
+            <div class="feature-number">3</div>
+            <div>
+              <h3 style="font-size: 1.25rem; margin-bottom: 0.35rem; color: var(--color-primary-dark);">
+                Preventive Healthcare Awareness
+              </h3>
+              <p style="color: var(--color-text-muted); font-size: 0.95rem;">
+                Prevention costs a fraction of treatment. Our vaccination timetables and biosecurity checklists keep infectious diseases out of your shed.
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-item-card">
+            <div class="feature-number">4</div>
+            <div>
+              <h3 style="font-size: 1.25rem; margin-bottom: 0.35rem; color: var(--color-primary-dark);">
+                Veterinary Assistance Locator
+              </h3>
+              <p style="color: var(--color-text-muted); font-size: 0.95rem;">
+                Locate nearby government veterinary dispensaries, mobile ambulance services, and certified cattle practitioners when clinical intervention is required.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. HOW IT WORKS -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Simple Workflow</span>
+          <h2 class="section-title">How It Works</h2>
+          <p class="section-subtitle">
+            A practical 4-step path to healthier livestock and maximum farm profitability.
+          </p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-circle">1</div>
+            <h3 class="step-title">Select Your Animal</h3>
+            <p class="step-desc">
+              Choose your livestock category (Cow, Buffalo, Goat, Sheep) to access targeted guidelines.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-circle">2</div>
+            <h3 class="step-title">Explore Health & Feed</h3>
+            <p class="step-desc">
+              Calculate customized dry matter and fodder rations to maintain steady milk and meat yields.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-circle">3</div>
+            <h3 class="step-title">Learn Preventive Care</h3>
+            <p class="step-desc">
+              Adopt regular deworming, shed sanitation, and save upcoming vaccination dates in your browser.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-circle">4</div>
+            <h3 class="step-title">Find Professional Help</h3>
+            <p class="step-desc">
+              Contact qualified veterinarians whenever abnormal symptoms or high fevers are identified.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. EMERGENCY CALLOUT BANNER -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div style="background: linear-gradient(135deg, #1b5e20, #0d3813); border-radius: var(--radius-xl); padding: var(--space-2xl); color: #ffffff; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-lg); box-shadow: var(--shadow-xl);">
+          <div style="max-width: 650px;">
+            <span class="badge badge-warning" style="margin-bottom: var(--space-sm);">🚨 24/7 National Farmer Support</span>
+            <h3 style="color: #ffffff; font-size: 1.85rem; margin-bottom: 0.5rem;">
+              Need Immediate Animal Medical Support?
+            </h3>
+            <p style="color: rgba(255,255,255,0.85); font-size: 0.95rem;">
+              If your animal shows sudden collapse, bloat, high fever, or labor complications, call the National Animal Emergency Toll-Free Helpline or find a verified veterinary dispensary right away.
+            </p>
+          </div>
+          <div style="display: flex; gap: var(--space-md); flex-wrap: wrap;">
+            <a href="tel:1962" class="btn btn-secondary">
+              📞 Call 1962 Helpline
+            </a>
+            <a href="veterinarians.html" class="btn btn-outline" style="border-color: #ffffff; color: #ffffff;">
+              Find Nearest Vet
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       GLOBAL FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <!-- Brand Info -->
+        <div class="footer-brand">
+          <div class="brand-logo" style="margin-bottom: 0.5rem;">
+            <div class="logo-icon" style="background: var(--color-primary-light);">🐄</div>
+            <div class="brand-text-wrap">
+              <span class="brand-name">Smart Animal Care</span>
+              <span class="brand-tagline">Healthy Animals, Happy Farmers</span>
+            </div>
+          </div>
+          <p class="footer-desc">
+            An open educational livestock healthcare and management platform designed to empower dairy and smallholder livestock farmers with reliable veterinary knowledge.
+          </p>
+          <div class="student-project-pill">
+            🎓 Academic College Project — 2026
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="footer-heading">Platform Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home Page</a></li>
+            <li><a href="animals.html">Animal Care Guides</a></li>
+            <li><a href="diseases.html">Livestock Disease Index</a></li>
+            <li><a href="nutrition.html">Nutrition & Feed Ration</a></li>
+            <li><a href="care-tips.html">Preventive Healthcare</a></li>
+            <li><a href="veterinarians.html">Find a Veterinarian</a></li>
+            <li><a href="contact.html">Project Info & Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Animal Species -->
+        <div>
+          <h4 class="footer-heading">Target Species</h4>
+          <ul class="footer-links">
+            <li><a href="animals.html">Dairy Cattle (Cow)</a></li>
+            <li><a href="animals.html">Water Buffalo</a></li>
+            <li><a href="animals.html">Goat (Small Ruminants)</a></li>
+            <li><a href="animals.html">Sheep & Flocks</a></li>
+            <li><a href="care-tips.html">Vaccine Schedules</a></li>
+            <li><a href="nutrition.html">Feed Calculator</a></li>
+          </ul>
+        </div>
+
+        <!-- Emergency / Helpline -->
+        <div>
+          <h4 class="footer-heading">Emergency Helpline</h4>
+          <div class="footer-emergency-box">
+            <h5>National Animal Ambulance</h5>
+            <p>Toll-free emergency veterinary dispensary support across India.</p>
+            <a href="tel:1962" class="phone-number">📞 1962</a>
+          </div>
+          <p style="font-size: 0.775rem; color: #9ca3af; margin-top: 0.75rem; line-height: 1.4;">
+            Always seek physical examination by a registered veterinarian for sick animals.
+          </p>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 Smart Animal Care — Final Year Student Project. All rights reserved.</p>
+        <p>Built with HTML5, CSS3, & Vanilla JavaScript. No external dependencies.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button type="button" class="back-to-top" id="backToTop" aria-label="Scroll back to top">
+    ↑
+  </button>
+
+  <!-- Global Script -->
+  <script src="js/script.js" defer></script>
+</body>
+</html>
