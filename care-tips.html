@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Preventive Animal Care — Shed hygiene, vaccination schedules, seasonal deworming, interactive daily checklist, and localStorage vaccination reminder tool on Smart Animal Care.">
-  <title>Preventive Animal Care & Reminders | Smart Animal Care</title>
+  <title data-i18n="title-care">Preventive Animal Care & Reminders | Smart Animal Care</title>
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +24,7 @@
       <a href="index.html" class="brand-logo" aria-label="Smart Animal Care Home">
         <div class="logo-icon" aria-hidden="true">🐄</div>
         <div class="brand-text-wrap">
-          <span class="brand-name">Smart Animal Care</span>
+          <span class="brand-name" data-i18n="brand-name">Smart Animal Care</span>
           <span class="brand-tagline" data-i18n="brand-tagline">Healthy Animals, Happy Farmers</span>
         </div>
       </a>
@@ -61,21 +61,21 @@
     <div class="brand-logo" style="margin-bottom: var(--space-md);">
       <div class="logo-icon">🐄</div>
       <div class="brand-text-wrap">
-        <span class="brand-name">Smart Animal Care</span>
-        <span class="brand-tagline">Healthy Animals, Happy Farmers</span>
+        <span class="brand-name" data-i18n="brand-name">Smart Animal Care</span>
+        <span class="brand-tagline" data-i18n="brand-tagline">Healthy Animals, Happy Farmers</span>
       </div>
     </div>
     <nav class="flex flex-col gap-sm">
-      <a href="index.html" class="nav-link mobile-nav-link">🏠 Home</a>
-      <a href="animals.html" class="nav-link mobile-nav-link">🐄 Animal Care</a>
-      <a href="diseases.html" class="nav-link mobile-nav-link">🩺 Disease Guide</a>
-      <a href="nutrition.html" class="nav-link mobile-nav-link">🌾 Nutrition & Feed</a>
-      <a href="care-tips.html" class="nav-link mobile-nav-link active">🛡️ Preventive Care</a>
-      <a href="veterinarians.html" class="nav-link mobile-nav-link">👨‍⚕️ Find a Vet</a>
-      <a href="contact.html" class="nav-link mobile-nav-link">📞 About & Contact</a>
+      <a href="index.html" class="nav-link mobile-nav-link" data-i18n="mobile-nav-home">🏠 Home</a>
+      <a href="animals.html" class="nav-link mobile-nav-link" data-i18n="mobile-nav-animals">🐄 Animal Care</a>
+      <a href="diseases.html" class="nav-link mobile-nav-link" data-i18n="mobile-nav-diseases">🩺 Disease Guide</a>
+      <a href="nutrition.html" class="nav-link mobile-nav-link" data-i18n="mobile-nav-nutrition">🌾 Nutrition & Feed</a>
+      <a href="care-tips.html" class="nav-link mobile-nav-link active" data-i18n="mobile-nav-care">🛡️ Preventive Care</a>
+      <a href="veterinarians.html" class="nav-link mobile-nav-link" data-i18n="mobile-nav-vet">👨‍⚕️ Find a Vet</a>
+      <a href="contact.html" class="nav-link mobile-nav-link" data-i18n="mobile-nav-contact">📞 About & Contact</a>
     </nav>
     <div style="margin-top: auto; padding-top: var(--space-md); border-top: 1px solid var(--color-border);">
-      <a href="veterinarians.html" class="btn btn-primary btn-block">Find a Veterinarian</a>
+      <a href="veterinarians.html" class="btn btn-primary btn-block" data-i18n="cta-find-vet">Find a Veterinarian</a>
     </div>
   </aside>
 
@@ -85,12 +85,10 @@
   <div class="page-banner">
     <div class="container banner-content">
       <div class="breadcrumbs">
-        <a href="index.html">Home</a> &gt; <span>Preventive Care</span>
+        <a href="index.html" data-i18n="crumb-home">Home</a> &gt; <span data-i18n="crumb-care">Preventive Care</span>
       </div>
-      <h1 class="page-banner-title">Preventive Animal Care</h1>
-      <p class="page-banner-subtitle">
-        “Simple habits today can support healthier livestock tomorrow.” Master biosecurity, routine vaccination, housing hygiene, and track shot due dates.
-      </p>
+      <h1 class="page-banner-title" data-i18n="care-banner-title">Preventive Animal Care</h1>
+      <p class="page-banner-subtitle" data-i18n="care-banner-subtitle">“Simple habits today can support healthier livestock tomorrow.” Master biosecurity, routine vaccination, housing hygiene, and track shot due dates.</p>
     </div>
   </div>
 
@@ -104,10 +102,8 @@
       <div class="disclaimer-banner">
         <div class="disclaimer-icon" aria-hidden="true">🛡️</div>
         <div class="disclaimer-text">
-          <h4>Preventive Healthcare Notice</h4>
-          <p>
-            Vaccination schedules and deworming protocols may differ according to state veterinary recommendations, regional endemic disease prevalence, and local climate patterns. Always consult your district veterinary officer before administering vaccines.
-          </p>
+          <h4 data-i18n="care-disc-title">Preventive Healthcare Notice</h4>
+          <p data-i18n="care-disc-text">Vaccination schedules and deworming protocols may differ according to state veterinary recommendations, regional endemic disease prevalence, and local climate patterns. Always consult your district veterinary officer before administering vaccines.</p>
         </div>
       </div>
 
@@ -115,80 +111,68 @@
       <section class="reminder-tool-wrapper">
         <div class="reminder-header-bar">
           <div>
-            <span class="badge badge-warning" style="margin-bottom: 0.25rem;">Future-Ready Tool</span>
-            <h2 style="font-size: 1.5rem; color: #ffffff;">📅 Livestock Vaccination Reminder Tool</h2>
-            <p style="font-size: 0.85rem; color: rgba(255,255,255,0.9);">
-              Add upcoming vaccine schedules for your herd. Data is securely saved in your browser (LocalStorage) so you never miss a critical booster dose!
-            </p>
+            <span class="badge badge-warning" style="margin-bottom: 0.25rem;" data-i18n="rem-tool-badge">Future-Ready Tool</span>
+            <h2 style="font-size: 1.5rem; color: #ffffff;" data-i18n="rem-tool-title">📅 Livestock Vaccination Reminder Tool</h2>
+            <p style="font-size: 0.85rem; color: rgba(255,255,255,0.9);" data-i18n="rem-tool-sub">Add upcoming vaccine schedules for your herd. Data is securely saved in your browser (LocalStorage) so you never miss a critical booster dose!</p>
           </div>
-          <button type="button" id="clearRemindersBtn" class="btn btn-sm btn-outline" style="border-color: rgba(255,255,255,0.6); color: #ffffff;">
-            Clear All
-          </button>
+          <button type="button" id="clearRemindersBtn" class="btn btn-sm btn-outline" style="border-color: rgba(255,255,255,0.6); color: #ffffff;" data-i18n="rem-btn-clear">Clear All</button>
         </div>
 
         <div class="reminder-body">
           <!-- Form Pane -->
           <div>
-            <h3 style="font-size: 1.15rem; color: var(--color-primary-dark); margin-bottom: var(--space-md);">
-              Add New Vaccination Schedule
-            </h3>
+            <h3 style="font-size: 1.15rem; color: var(--color-primary-dark); margin-bottom: var(--space-md);" data-i18n="rem-form-title">Add New Vaccination Schedule</h3>
             <form id="reminderForm" class="reminder-form">
               <div class="form-group">
-                <label for="remTag">Animal Name / Tag Number *</label>
-                <input type="text" id="remTag" class="form-control" placeholder="e.g., Gauri Cow (#104), Murrah #45" required>
+                <label for="remTag" data-i18n="rem-lbl-tag">Animal Name / Tag Number *</label>
+                <input type="text" id="remTag" class="form-control" placeholder="e.g., Gauri Cow (#104), Murrah #45" data-i18n-placeholder="rem-ph-tag" required>
               </div>
 
               <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md);">
                 <div class="form-group">
-                  <label for="remAnimal">Species *</label>
+                  <label for="remAnimal" data-i18n="rem-lbl-animal">Species *</label>
                   <select id="remAnimal" class="form-control" required>
-                    <option value="Cow">Cow (गाय)</option>
-                    <option value="Buffalo">Buffalo (भैंस)</option>
-                    <option value="Goat">Goat (बकरी)</option>
-                    <option value="Sheep">Sheep (भेड़)</option>
+                    <option value="Cow" data-i18n="rem-opt-cow">Cow (गाय)</option>
+                    <option value="Buffalo" data-i18n="rem-opt-buffalo">Buffalo (भैंस)</option>
+                    <option value="Goat" data-i18n="rem-opt-goat">Goat (बकरी)</option>
+                    <option value="Sheep" data-i18n="rem-opt-sheep">Sheep (भेड़)</option>
                   </select>
                 </div>
 
                 <div class="form-group">
-                  <label for="remVaccine">Vaccine Name *</label>
-                  <input type="text" id="remVaccine" class="form-control" placeholder="e.g., FMD Booster, HS, PPR" required>
+                  <label for="remVaccine" data-i18n="rem-lbl-vaccine">Vaccine Name *</label>
+                  <input type="text" id="remVaccine" class="form-control" placeholder="e.g., FMD Booster, HS, PPR" data-i18n-placeholder="rem-ph-vaccine" required>
                 </div>
               </div>
 
               <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md);">
                 <div class="form-group">
-                  <label for="remDateGiven">Date Administered</label>
+                  <label for="remDateGiven" data-i18n="rem-lbl-date-given">Date Administered</label>
                   <input type="date" id="remDateGiven" class="form-control">
                 </div>
 
                 <div class="form-group">
-                  <label for="remDueDate">Next Due Date *</label>
+                  <label for="remDueDate" data-i18n="rem-lbl-due-date">Next Due Date *</label>
                   <input type="date" id="remDueDate" class="form-control" required>
                 </div>
               </div>
 
               <div class="form-group">
-                <label for="remNotes">Notes / Dosage / Vet Remarks</label>
-                <input type="text" id="remNotes" class="form-control" placeholder="e.g., Subcutaneous, 2ml, pre-monsoon dose">
+                <label for="remNotes" data-i18n="rem-lbl-notes">Notes / Dosage / Vet Remarks</label>
+                <input type="text" id="remNotes" class="form-control" placeholder="e.g., Subcutaneous, 2ml, pre-monsoon dose" data-i18n-placeholder="rem-ph-notes">
               </div>
 
-              <button type="submit" class="btn btn-primary btn-block">
-                ➕ Add Vaccination Reminder
-              </button>
+              <button type="submit" class="btn btn-primary btn-block" data-i18n="rem-btn-submit">➕ Add Vaccination Reminder</button>
 
-              <p style="font-size: 0.775rem; color: var(--color-text-light); text-align: center; margin-top: 0.25rem;">
-                <em>Note: This is an educational scheduling utility and does not constitute veterinary medical certification.</em>
-              </p>
+              <p style="font-size: 0.775rem; color: var(--color-text-light); text-align: center; margin-top: 0.25rem;" data-i18n="rem-form-note"><em data-i18n="rem-form-note">Note: This is an educational scheduling utility and does not constitute veterinary medical certification.</em></p>
             </form>
           </div>
 
           <!-- Saved Reminders List Pane -->
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-md);">
-              <h3 style="font-size: 1.15rem; color: var(--color-primary-dark);">
-                Upcoming Herd Reminders
-              </h3>
-              <span class="badge badge-info">Stored Locally</span>
+              <h3 style="font-size: 1.15rem; color: var(--color-primary-dark);" data-i18n="rem-list-title">Upcoming Herd Reminders</h3>
+              <span class="badge badge-info" data-i18n="rem-badge-storage">Stored Locally</span>
             </div>
 
             <div class="reminders-list-pane" id="remindersListContainer">
@@ -197,10 +181,8 @@
 
             <div id="remindersEmptyState" class="no-results-box" style="display: none; padding: var(--space-xl);">
               <div class="no-results-icon">📋</div>
-              <h4>No Active Reminders</h4>
-              <p class="text-muted" style="font-size: 0.85rem;">
-                Use the form on the left to schedule your livestock vaccines.
-              </p>
+              <h4 data-i18n="rem-empty-title">No Active Reminders</h4>
+              <p class="text-muted" style="font-size: 0.85rem;" data-i18n="rem-empty-desc">Use the form on the left to schedule your livestock vaccines.</p>
             </div>
           </div>
         </div>
@@ -208,11 +190,9 @@
 
       <!-- 6 PILLARS OF PREVENTIVE ANIMAL CARE -->
       <div class="section-header" style="margin-top: var(--space-3xl);">
-        <span class="section-tag">Proactive Husbandry</span>
-        <h2 class="section-title">6 Core Pillars of Preventive Care</h2>
-        <p class="section-subtitle">
-          “Simple habits today can support healthier livestock tomorrow.”
-        </p>
+        <span class="section-tag" data-i18n="pillars-tag">Proactive Husbandry</span>
+        <h2 class="section-title" data-i18n="pillars-title">6 Core Pillars of Preventive Care</h2>
+        <p class="section-subtitle" data-i18n="pillars-subtitle">“Simple habits today can support healthier livestock tomorrow.”</p>
       </div>
 
       <div class="checklist-container">
@@ -220,8 +200,8 @@
         <div class="check-item-card">
           <div class="check-item-icon">🏡</div>
           <div class="check-item-content">
-            <h4>1. Clean & Ventilated Shelters</h4>
-            <p>
+            <h4 data-i18n="care-p1-title">1. Clean & Ventilated Shelters</h4>
+            <p data-i18n="care-p1-desc">
               Stagnant moisture and ammonia vapors cause respiratory lesions and mastitis. Ensure shed roofs are at least 10-12 feet high with ridge vents. Build floor with a 1:40 slope towards external drainage channels to keep standings dry.
             </p>
           </div>
@@ -231,8 +211,8 @@
         <div class="check-item-card">
           <div class="check-item-icon">🧼</div>
           <div class="check-item-content">
-            <h4>2. Strict Farm Hygiene & Sanitation</h4>
-            <p>
+            <h4 data-i18n="care-p2-title">2. Strict Farm Hygiene & Sanitation</h4>
+            <p data-i18n="care-p2-desc">
               Remove cow dung twice daily. Dust shed floors with slaked lime (चूना) weekly to neutralize pathogens. Install a 10% lime or potassium permanganate footbath at the farm entrance to disinfect visitor boots and vehicle tires.
             </p>
           </div>
@@ -242,8 +222,8 @@
         <div class="check-item-card">
           <div class="check-item-icon">💉</div>
           <div class="check-item-content">
-            <h4>3. Timely Vaccination Schedules</h4>
-            <p>
+            <h4 data-i18n="care-p3-title">3. Timely Vaccination Schedules</h4>
+            <p data-i18n="care-p3-desc">
               Vaccines build specific antibodies against deadly epidemics. Never vaccinate an animal that is running a high fever, severely emaciated, or heavily infested with internal worms, as immune response will fail.
             </p>
           </div>
@@ -253,8 +233,8 @@
         <div class="check-item-card">
           <div class="check-item-icon">🩺</div>
           <div class="check-item-content">
-            <h4>4. Seasonal Deworming & Health Exams</h4>
-            <p>
+            <h4 data-i18n="care-p4-title">4. Seasonal Deworming & Health Exams</h4>
+            <p data-i18n="care-p4-desc">
               Deworm all livestock at least 3-4 times annually (specifically pre-monsoon in May and post-monsoon in October). Rotate dewormer molecules (Albendazole, Fenbendazole, Ivermectin) to prevent parasite drug resistance.
             </p>
           </div>
@@ -264,8 +244,8 @@
         <div class="check-item-card">
           <div class="check-item-icon">💧</div>
           <div class="check-item-content">
-            <h4>5. Continuous Clean Drinking Water</h4>
-            <p>
+            <h4 data-i18n="care-p5-title">5. Continuous Clean Drinking Water</h4>
+            <p data-i18n="care-p5-desc">
               Ensure continuous access to potable water in shaded troughs. Stagnant green-scummed water harbors cyanobacteria, leptospirosis, and liver fluke snails. Scrub water troughs with bleaching powder every 10 days.
             </p>
           </div>
@@ -275,8 +255,8 @@
         <div class="check-item-card">
           <div class="check-item-icon">👁️</div>
           <div class="check-item-content">
-            <h4>6. Early Attention & Quarantine Isolation</h4>
-            <p>
+            <h4 data-i18n="care-p6-title">6. Early Attention & Quarantine Isolation</h4>
+            <p data-i18n="care-p6-desc">
               Observe livestock behavior daily during morning milking. A drop in milk yield, dull ears, dry muzzle, or lack of rumination are early warnings. Immediately isolate any sick or newly purchased animal in a separate quarantine pen.
             </p>
           </div>
@@ -287,10 +267,10 @@
       <section style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-2xl); margin-bottom: var(--space-3xl); box-shadow: var(--shadow-md);">
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: var(--space-lg);">
           <div>
-            <h3 style="font-size: 1.4rem; color: var(--color-primary-dark);">
+            <h3 style="font-size: 1.4rem; color: var(--color-primary-dark);" data-i18n="care-chk-title">
               📋 Daily & Weekly Farm Biosecurity Checklist
             </h3>
-            <p class="text-muted" style="font-size: 0.9rem;">
+            <p class="text-muted" style="font-size: 0.9rem;" data-i18n="care-chk-sub">
               Click each item as you complete daily farm tasks to track your preventive score!
             </p>
           </div>
@@ -303,42 +283,42 @@
           <label style="display: flex; gap: var(--space-sm); align-items: flex-start; cursor: pointer; background: var(--color-surface-alt); padding: var(--space-md); border-radius: var(--radius-md);">
             <input type="checkbox" class="checklist-checkbox" style="width: 20px; height: 20px; margin-top: 2px; accent-color: var(--color-primary);">
             <span style="font-size: 0.925rem; color: var(--color-text-main);">
-              <strong>Check Water Troughs:</strong> Cleaned, filled with cool potable water, free of bird droppings and algal debris.
+              <strong data-i18n="care-chk-1-title">Check Water Troughs:</strong> <span data-i18n="care-chk-1-desc">Cleaned, filled with cool potable water, free of bird droppings and algal debris.</span>
             </span>
           </label>
 
           <label style="display: flex; gap: var(--space-sm); align-items: flex-start; cursor: pointer; background: var(--color-surface-alt); padding: var(--space-md); border-radius: var(--radius-md);">
             <input type="checkbox" class="checklist-checkbox" style="width: 20px; height: 20px; margin-top: 2px; accent-color: var(--color-primary);">
             <span style="font-size: 0.925rem; color: var(--color-text-main);">
-              <strong>Monitor Rumination (Cud Chewing):</strong> Verified that resting animals are rhythmically chewing their cud.
+              <strong data-i18n="care-chk-2-title">Monitor Rumination (Cud Chewing):</strong> <span data-i18n="care-chk-2-desc">Verified that resting animals are rhythmically chewing their cud.</span>
             </span>
           </label>
 
           <label style="display: flex; gap: var(--space-sm); align-items: flex-start; cursor: pointer; background: var(--color-surface-alt); padding: var(--space-md); border-radius: var(--radius-md);">
             <input type="checkbox" class="checklist-checkbox" style="width: 20px; height: 20px; margin-top: 2px; accent-color: var(--color-primary);">
             <span style="font-size: 0.925rem; color: var(--color-text-main);">
-              <strong>Clean Dung & Dry Bedding:</strong> Gutters scraped clean; dry bedding spread under high-yielding cows.
+              <strong data-i18n="care-chk-3-title">Clean Dung & Dry Bedding:</strong> <span data-i18n="care-chk-3-desc">Gutters scraped clean; dry bedding spread under high-yielding cows.</span>
             </span>
           </label>
 
           <label style="display: flex; gap: var(--space-sm); align-items: flex-start; cursor: pointer; background: var(--color-surface-alt); padding: var(--space-md); border-radius: var(--radius-md);">
             <input type="checkbox" class="checklist-checkbox" style="width: 20px; height: 20px; margin-top: 2px; accent-color: var(--color-primary);">
             <span style="font-size: 0.925rem; color: var(--color-text-main);">
-              <strong>Post-Milking Teat Disinfection:</strong> Teats dipped in 0.5% iodine solution; animals kept standing for 45 minutes.
+              <strong data-i18n="care-chk-4-title">Post-Milking Teat Disinfection:</strong> <span data-i18n="care-chk-4-desc">Teats dipped in 0.5% iodine solution; animals kept standing for 45 minutes.</span>
             </span>
           </label>
 
           <label style="display: flex; gap: var(--space-sm); align-items: flex-start; cursor: pointer; background: var(--color-surface-alt); padding: var(--space-md); border-radius: var(--radius-md);">
             <input type="checkbox" class="checklist-checkbox" style="width: 20px; height: 20px; margin-top: 2px; accent-color: var(--color-primary);">
             <span style="font-size: 0.925rem; color: var(--color-text-main);">
-              <strong>Tick & Fly Inspection:</strong> Inspected skin folds, tail base, and ears for ticks or fly irritation.
+              <strong data-i18n="care-chk-5-title">Tick & Fly Inspection:</strong> <span data-i18n="care-chk-5-desc">Inspected skin folds, tail base, and ears for ticks or fly irritation.</span>
             </span>
           </label>
 
           <label style="display: flex; gap: var(--space-sm); align-items: flex-start; cursor: pointer; background: var(--color-surface-alt); padding: var(--space-md); border-radius: var(--radius-md);">
             <input type="checkbox" class="checklist-checkbox" style="width: 20px; height: 20px; margin-top: 2px; accent-color: var(--color-primary);">
             <span style="font-size: 0.925rem; color: var(--color-text-main);">
-              <strong>Feed Quality Inspection:</strong> Checked silage and grain bins for mold, moisture, or insect webs.
+              <strong data-i18n="care-chk-6-title">Feed Quality Inspection:</strong> <span data-i18n="care-chk-6-desc">Checked silage and grain bins for mold, moisture, or insect webs.</span>
             </span>
           </label>
         </div>
@@ -346,73 +326,71 @@
 
       <!-- STANDARD LIVESTOCK VACCINATION SCHEDULE TABLE -->
       <div class="section-header">
-        <span class="section-tag">Standard Protocol</span>
-        <h2 class="section-title">Master Livestock Vaccination Calendar</h2>
-        <p class="section-subtitle">
-          Recommended guidelines for cattle, buffaloes, sheep, and goats across major agro-climatic zones.
-        </p>
+        <span class="section-tag" data-i18n="care-cal-tag">Standard Protocol</span>
+        <h2 class="section-title" data-i18n="care-cal-title">Master Livestock Vaccination Calendar</h2>
+        <p class="section-subtitle" data-i18n="vax-table-subtitle">Recommended guidelines for cattle, buffaloes, sheep, and goats across major agro-climatic zones.</p>
       </div>
 
       <div class="nutrition-table-wrap">
         <table class="data-table">
           <thead>
             <tr>
-              <th>Disease Name</th>
-              <th>Species</th>
-              <th>Primary Dose Age</th>
-              <th>Booster Frequency</th>
-              <th>Best Month / Season</th>
+              <th data-i18n="th-disease">Disease Name</th>
+              <th data-i18n="th-species">Species</th>
+              <th data-i18n="th-dose-age">Primary Dose Age</th>
+              <th data-i18n="th-booster">Booster Frequency</th>
+              <th data-i18n="th-best-season">Best Month / Season</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>Foot & Mouth Disease (FMD)</strong></td>
-              <td>Cow, Buffalo, Sheep, Goat</td>
-              <td>3 - 4 Months</td>
-              <td>Bi-annually (Every 6 months)</td>
-              <td>March - April & Sept - October</td>
+              <td><strong data-i18n="vax-r1-dis">Foot & Mouth Disease (FMD)</strong></td>
+              <td data-i18n="vax-r1-spec">Cow, Buffalo, Sheep, Goat</td>
+              <td data-i18n="td-fmd-age">3 - 4 Months</td>
+              <td data-i18n="td-fmd-freq">Bi-annually (Every 6 months)</td>
+              <td data-i18n="td-fmd-season">March - April & Sept - October</td>
             </tr>
             <tr>
-              <td><strong>Hemorrhagic Septicemia (HS)</strong></td>
-              <td>Cow & Buffalo</td>
-              <td>6 Months</td>
-              <td>Annually</td>
-              <td>May - June (Pre-Monsoon)</td>
+              <td><strong data-i18n="vax-r2-dis">Hemorrhagic Septicemia (HS)</strong></td>
+              <td data-i18n="td-cow-buf">Cow & Buffalo</td>
+              <td data-i18n="td-hs-age">6 Months</td>
+              <td data-i18n="vax-r2-boost">Annually</td>
+              <td data-i18n="vax-r2-seas">May - June (Pre-Monsoon)</td>
             </tr>
             <tr>
-              <td><strong>Black Quarter (BQ)</strong></td>
-              <td>Cow & Buffalo</td>
-              <td>6 Months</td>
-              <td>Annually</td>
-              <td>May - June (Pre-Monsoon)</td>
+              <td><strong data-i18n="vax-r3-dis">Black Quarter (BQ)</strong></td>
+              <td data-i18n="td-cow-buf">Cow & Buffalo</td>
+              <td data-i18n="td-hs-age">6 Months</td>
+              <td data-i18n="vax-r2-boost">Annually</td>
+              <td data-i18n="vax-r2-seas">May - June (Pre-Monsoon)</td>
             </tr>
             <tr>
-              <td><strong>Peste des Petits Ruminants (PPR)</strong></td>
-              <td>Goat & Sheep</td>
-              <td>3 Months</td>
-              <td>Once every 3 Years</td>
-              <td>Any season (preferably winter)</td>
+              <td><strong data-i18n="ppr-name-title">Peste des Petits Ruminants (PPR)</strong></td>
+              <td data-i18n="td-goat-sheep">Goat & Sheep</td>
+              <td data-i18n="td-ppr-age">3 Months</td>
+              <td data-i18n="vax-r5-boost">Once every 3 Years</td>
+              <td data-i18n="td-ppr-season">Any season (preferably winter)</td>
             </tr>
             <tr>
-              <td><strong>Enterotoxemia (ET)</strong></td>
-              <td>Sheep & Goat</td>
-              <td>2 - 3 Months</td>
-              <td>Annually</td>
-              <td>Prior to monsoon green pasture flush</td>
+              <td><strong data-i18n="vax-r6-dis">Enterotoxemia (ET)</strong></td>
+              <td data-i18n="td-sheep-goat">Sheep & Goat</td>
+              <td data-i18n="td-et-age">2 - 3 Months</td>
+              <td data-i18n="vax-r2-boost">Annually</td>
+              <td data-i18n="td-et-season">Prior to monsoon green pasture flush</td>
             </tr>
             <tr>
-              <td><strong>Anthrax</strong></td>
-              <td>All livestock</td>
-              <td>4 Months</td>
-              <td>Annually (Endemic areas only)</td>
-              <td>Pre-monsoon season</td>
+              <td><strong data-i18n="vax-r4-dis">Anthrax</strong></td>
+              <td data-i18n="nut-tab-all-btn">All Livestock</td>
+              <td data-i18n="td-anthrax-age">4 Months</td>
+              <td data-i18n="td-annually-endemic">Annually (Endemic areas only)</td>
+              <td data-i18n="td-pre-monsoon">Pre-monsoon season</td>
             </tr>
             <tr>
-              <td><strong>Brucellosis (Strain 19)</strong></td>
-              <td>Female calves only</td>
-              <td>4 - 8 Months</td>
-              <td>Once in lifetime (Heifer calves)</td>
-              <td>Any month</td>
+              <td><strong data-i18n="td-bruc-name">Brucellosis (Strain 19)</strong></td>
+              <td data-i18n="td-female-calves">Female calves only</td>
+              <td data-i18n="td-bruc-age">4 - 8 Months</td>
+              <td data-i18n="td-bruc-freq">Once in lifetime (Heifer calves)</td>
+              <td data-i18n="td-any-month">Any month</td>
             </tr>
           </tbody>
         </table>
@@ -431,59 +409,58 @@
           <div class="brand-logo" style="margin-bottom: 0.5rem;">
             <div class="logo-icon" style="background: var(--color-primary-light);">🐄</div>
             <div class="brand-text-wrap">
-              <span class="brand-name">Smart Animal Care</span>
-              <span class="brand-tagline">Healthy Animals, Happy Farmers</span>
+              <span class="brand-name" data-i18n="brand-name">Smart Animal Care</span>
+              <span class="brand-tagline" data-i18n="brand-tagline">Healthy Animals, Happy Farmers</span>
             </div>
           </div>
-          <p class="footer-desc">
-            An open educational livestock healthcare and management platform designed to empower dairy and smallholder livestock farmers with reliable veterinary knowledge.
-          </p>
-          <div class="student-project-pill">🎓 Academic College Project — 2026</div>
+          <p class="footer-desc" data-i18n="footer-desc">An open educational livestock healthcare and management platform designed to empower dairy and smallholder livestock farmers with reliable veterinary knowledge.</p>
+          <div class="student-project-pill" data-i18n="footer-project-pill">🎓 Academic College Project — 2026</div>
         </div>
 
         <div>
-          <h4 class="footer-heading">Platform Links</h4>
+          <h4 class="footer-heading" data-i18n="footer-heading-links">Platform Links</h4>
           <ul class="footer-links">
-            <li><a href="index.html">Home Page</a></li>
-            <li><a href="animals.html">Animal Care Guides</a></li>
-            <li><a href="diseases.html">Livestock Disease Index</a></li>
-            <li><a href="nutrition.html">Nutrition & Feed Ration</a></li>
-            <li><a href="care-tips.html">Preventive Healthcare</a></li>
-            <li><a href="veterinarians.html">Find a Veterinarian</a></li>
-            <li><a href="contact.html">Project Info & Contact</a></li>
+            <li><a href="index.html" data-i18n="footer-link-home">Home Page</a></li>
+            <li><a href="animals.html" data-i18n="footer-link-animals">Animal Care Guides</a></li>
+            <li><a href="diseases.html" data-i18n="footer-link-diseases">Livestock Disease Index</a></li>
+            <li><a href="nutrition.html" data-i18n="footer-link-nutrition">Nutrition & Feed Ration</a></li>
+            <li><a href="care-tips.html" data-i18n="footer-link-care">Preventive Healthcare</a></li>
+            <li><a href="veterinarians.html" data-i18n="footer-link-vet">Find a Veterinarian</a></li>
+            <li><a href="contact.html" data-i18n="footer-link-contact">Project Info & Contact</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="footer-heading">Target Species</h4>
+          <h4 class="footer-heading" data-i18n="footer-heading-species">Target Species</h4>
           <ul class="footer-links">
-            <li><a href="animals.html">Dairy Cattle (Cow)</a></li>
-            <li><a href="animals.html">Water Buffalo</a></li>
-            <li><a href="animals.html">Goat (Small Ruminants)</a></li>
-            <li><a href="animals.html">Sheep & Flocks</a></li>
-            <li><a href="care-tips.html">Vaccine Schedules</a></li>
-            <li><a href="nutrition.html">Feed Calculator</a></li>
+            <li><a href="animals.html" data-i18n="footer-species-cow">Dairy Cattle (Cow)</a></li>
+            <li><a href="animals.html" data-i18n="footer-species-buffalo">Water Buffalo</a></li>
+            <li><a href="animals.html" data-i18n="footer-species-goat">Goat (Small Ruminants)</a></li>
+            <li><a href="animals.html" data-i18n="footer-species-sheep">Sheep & Flocks</a></li>
+            <li><a href="care-tips.html" data-i18n="footer-species-vaccines">Vaccine Schedules</a></li>
+            <li><a href="nutrition.html" data-i18n="footer-species-calculator">Feed Calculator</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="footer-heading">Emergency Helpline</h4>
+          <h4 class="footer-heading" data-i18n="footer-heading-helpline">Emergency Helpline</h4>
           <div class="footer-emergency-box">
-            <h5>National Animal Ambulance</h5>
-            <p>Toll-free emergency veterinary dispensary support across India.</p>
+            <h5 data-i18n="footer-helpline-title">National Animal Ambulance</h5>
+            <p data-i18n="footer-helpline-desc">Toll-free emergency veterinary dispensary support across India.</p>
             <a href="tel:1962" class="phone-number">📞 1962</a>
           </div>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2026 Smart Animal Care — Final Year Student Project. All rights reserved.</p>
-        <p>Built with HTML5, CSS3, & Vanilla JavaScript. No external dependencies.</p>
+        <p data-i18n="footer-copyright">&copy; 2026 Smart Animal Care — Final Year Student Project. All rights reserved.</p>
+        <p data-i18n="footer-tech-stack">Built with HTML5, CSS3, & Vanilla JavaScript. No external dependencies.</p>
       </div>
     </div>
   </footer>
 
   <button type="button" class="back-to-top" id="backToTop" aria-label="Scroll back to top">↑</button>
+  <script src="js/translations.js" defer></script>
   <script src="js/script.js" defer></script>
 </body>
 </html>

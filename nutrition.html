@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Animal Nutrition Guide — Balanced feed formulation, green and dry fodder requirements, clean drinking water, and interactive feed ration calculator on Smart Animal Care.">
-  <title>Animal Nutrition Guide | Smart Animal Care</title>
+  <title data-i18n="title-nutrition">Animal Nutrition Guide | Smart Animal Care</title>
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +24,7 @@
       <a href="index.html" class="brand-logo" aria-label="Smart Animal Care Home">
         <div class="logo-icon" aria-hidden="true">🐄</div>
         <div class="brand-text-wrap">
-          <span class="brand-name">Smart Animal Care</span>
+          <span class="brand-name" data-i18n="brand-name">Smart Animal Care</span>
           <span class="brand-tagline" data-i18n="brand-tagline">Healthy Animals, Happy Farmers</span>
         </div>
       </a>
@@ -61,21 +61,21 @@
     <div class="brand-logo" style="margin-bottom: var(--space-md);">
       <div class="logo-icon">🐄</div>
       <div class="brand-text-wrap">
-        <span class="brand-name">Smart Animal Care</span>
-        <span class="brand-tagline">Healthy Animals, Happy Farmers</span>
+        <span class="brand-name" data-i18n="brand-name">Smart Animal Care</span>
+        <span class="brand-tagline" data-i18n="brand-tagline">Healthy Animals, Happy Farmers</span>
       </div>
     </div>
     <nav class="flex flex-col gap-sm">
-      <a href="index.html" class="nav-link mobile-nav-link">🏠 Home</a>
-      <a href="animals.html" class="nav-link mobile-nav-link">🐄 Animal Care</a>
-      <a href="diseases.html" class="nav-link mobile-nav-link">🩺 Disease Guide</a>
-      <a href="nutrition.html" class="nav-link mobile-nav-link active">🌾 Nutrition & Feed</a>
-      <a href="care-tips.html" class="nav-link mobile-nav-link">🛡️ Preventive Care</a>
-      <a href="veterinarians.html" class="nav-link mobile-nav-link">👨‍⚕️ Find a Vet</a>
-      <a href="contact.html" class="nav-link mobile-nav-link">📞 About & Contact</a>
+      <a href="index.html" class="nav-link mobile-nav-link" data-i18n="mobile-nav-home">🏠 Home</a>
+      <a href="animals.html" class="nav-link mobile-nav-link" data-i18n="mobile-nav-animals">🐄 Animal Care</a>
+      <a href="diseases.html" class="nav-link mobile-nav-link" data-i18n="mobile-nav-diseases">🩺 Disease Guide</a>
+      <a href="nutrition.html" class="nav-link mobile-nav-link active" data-i18n="mobile-nav-nutrition">🌾 Nutrition & Feed</a>
+      <a href="care-tips.html" class="nav-link mobile-nav-link" data-i18n="mobile-nav-care">🛡️ Preventive Care</a>
+      <a href="veterinarians.html" class="nav-link mobile-nav-link" data-i18n="mobile-nav-vet">👨‍⚕️ Find a Vet</a>
+      <a href="contact.html" class="nav-link mobile-nav-link" data-i18n="mobile-nav-contact">📞 About & Contact</a>
     </nav>
     <div style="margin-top: auto; padding-top: var(--space-md); border-top: 1px solid var(--color-border);">
-      <a href="veterinarians.html" class="btn btn-primary btn-block">Find a Veterinarian</a>
+      <a href="veterinarians.html" class="btn btn-primary btn-block" data-i18n="cta-find-vet">Find a Veterinarian</a>
     </div>
   </aside>
 
@@ -85,12 +85,10 @@
   <div class="page-banner">
     <div class="container banner-content">
       <div class="breadcrumbs">
-        <a href="index.html">Home</a> &gt; <span>Nutrition</span>
+        <a href="index.html" data-i18n="crumb-home">Home</a> &gt; <span data-i18n="crumb-nutrition">Nutrition</span>
       </div>
-      <h1 class="page-banner-title">Animal Nutrition Guide</h1>
-      <p class="page-banner-subtitle">
-        Scientifically balanced feeding guidelines, green and dry fodder ratios, mineral supplementation, and clean water management for optimal livestock health.
-      </p>
+      <h1 class="page-banner-title" data-i18n="nut-banner-title">Animal Nutrition Guide</h1>
+      <p class="page-banner-subtitle" data-i18n="nut-banner-subtitle">Scientifically balanced feeding guidelines, green and dry fodder ratios, mineral supplementation, and clean water management for optimal livestock health.</p>
     </div>
   </div>
 
@@ -104,97 +102,87 @@
       <div class="disclaimer-banner">
         <div class="disclaimer-icon" aria-hidden="true">🌾</div>
         <div class="disclaimer-text">
-          <h4>Important Nutritional Notice</h4>
-          <p>
-            Feeding requirements can vary depending on factors such as age, body weight, health status, production stage (lactating, pregnant, dry), breed, and local environmental conditions. Consult a qualified veterinarian or animal nutrition professional for farm-specific ration formulation.
-          </p>
+          <h4 data-i18n="nut-disc-title">Important Nutritional Notice</h4>
+          <p data-i18n="nut-disc-text">Feeding requirements can vary depending on factors such as age, body weight, health status, production stage (lactating, pregnant, dry), breed, and local environmental conditions. Consult a qualified veterinarian or animal nutrition professional for farm-specific ration formulation.</p>
         </div>
       </div>
 
       <!-- INTERACTIVE FEED RATION CALCULATOR (Feature #9 & #18) -->
       <section class="calc-card">
         <div style="margin-bottom: var(--space-lg);">
-          <span class="badge badge-success" style="margin-bottom: var(--space-xs);">Interactive Utility</span>
-          <h2 style="font-size: 1.75rem; color: var(--color-primary-dark); margin-bottom: 0.25rem;">
-            🌾 Livestock Daily Feed Ration Estimator
-          </h2>
-          <p class="text-muted" style="font-size: 0.95rem;">
-            Select your livestock animal and enter estimated body weight and daily milk yield to calculate scientific Dry Matter (DM), green fodder, dry straw, and concentrate requirements.
-          </p>
+          <span class="badge badge-success" style="margin-bottom: var(--space-xs);" data-i18n="calc-badge">Interactive Utility</span>
+          <h2 style="font-size: 1.75rem; color: var(--color-primary-dark); margin-bottom: 0.25rem;" data-i18n="calc-title">🌾 Livestock Daily Feed Ration Estimator</h2>
+          <p class="text-muted" style="font-size: 0.95rem;" data-i18n="calc-subtitle">Select your livestock animal and enter estimated body weight and daily milk yield to calculate scientific Dry Matter (DM), green fodder, dry straw, and concentrate requirements.</p>
         </div>
 
         <div class="calc-grid">
           <!-- Inputs Column -->
           <div class="calc-inputs">
             <div class="form-group">
-              <label for="calcAnimalType">Select Livestock Animal:</label>
+              <label for="calcAnimalType" data-i18n="calc-lbl-animal">Select Livestock Animal:</label>
               <select id="calcAnimalType" class="form-control">
-                <option value="cow">Dairy Cow (गाय)</option>
-                <option value="buffalo">Water Buffalo (भैंस)</option>
-                <option value="goat">Domestic Goat (बकरी)</option>
-                <option value="sheep">Domestic Sheep (भेड़)</option>
+                <option value="cow" data-i18n="calc-opt-cow">Dairy Cow (गाय)</option>
+                <option value="buffalo" data-i18n="calc-opt-buffalo">Water Buffalo (भैंस)</option>
+                <option value="goat" data-i18n="calc-opt-goat">Domestic Goat (बकरी)</option>
+                <option value="sheep" data-i18n="calc-opt-sheep">Domestic Sheep (भेड़)</option>
               </select>
             </div>
 
             <div class="form-group">
-              <label for="calcStage">Physiological Stage:</label>
+              <label for="calcStage" data-i18n="calc-lbl-stage">Physiological Stage:</label>
               <select id="calcStage" class="form-control">
-                <option value="lactating">Lactating / Milking (दुधारू)</option>
-                <option value="pregnant">Advanced Pregnancy (गर्भवती - Dry Period)</option>
-                <option value="dry">Maintenance / Dry (अन-उत्पादक)</option>
+                <option value="lactating" data-i18n="calc-stage-lactating">Lactating / Milking (दुधारू)</option>
+                <option value="pregnant" data-i18n="calc-stage-pregnant">Advanced Pregnancy (गर्भवती - Dry Period)</option>
+                <option value="dry" data-i18n="calc-stage-dry">Maintenance / Dry (अन-उत्पादक)</option>
               </select>
             </div>
 
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md);">
               <div class="form-group">
-                <label for="calcWeight">Body Weight (kg):</label>
+                <label for="calcWeight" data-i18n="calc-lbl-weight">Body Weight (kg):</label>
                 <input type="number" id="calcWeight" class="form-control" value="400" min="20" max="900" step="5">
               </div>
 
               <div class="form-group">
-                <label for="calcMilk">Milk Yield (Liters/Day):</label>
+                <label for="calcMilk" data-i18n="calc-lbl-milk">Milk Yield (Liters/Day):</label>
                 <input type="number" id="calcMilk" class="form-control" value="10" min="0" max="50" step="0.5">
               </div>
             </div>
 
-            <p style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.4; margin-top: var(--space-xs);">
-              💡 <em>Rule of Thumb: Ruminants require approximately 2.5% to 3.5% of their body weight in Dry Matter daily to support ruminal microbial health.</em>
-            </p>
+            <p style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.4; margin-top: var(--space-xs);" data-i18n="calc-rule-thumb">💡 <em>Rule of Thumb: Ruminants require approximately 2.5% to 3.5% of their body weight in Dry Matter daily to support ruminal microbial health.</em></p>
           </div>
 
           <!-- Output Column -->
           <div class="calc-output-card">
-            <h4 style="color: var(--color-primary-dark); font-size: 1.15rem; margin-bottom: var(--space-md); border-bottom: 2px solid var(--color-primary-subtle); padding-bottom: 0.5rem;">
-              Estimated Daily Feeding Recommendation
-            </h4>
+            <h4 style="color: var(--color-primary-dark); font-size: 1.15rem; margin-bottom: var(--space-md); border-bottom: 2px solid var(--color-primary-subtle); padding-bottom: 0.5rem;" data-i18n="calc-out-title">Estimated Daily Feeding Recommendation</h4>
 
             <div class="calc-result-row">
-              <span class="text-muted">Total Dry Matter (DM):</span>
+              <span class="text-muted" data-i18n="calc-row-dm">Total Dry Matter (DM):</span>
               <span class="calc-result-value" id="outDM">10.0 kg / day</span>
             </div>
 
             <div class="calc-result-row">
-              <span class="text-muted">Fresh Green Fodder:</span>
+              <span class="text-muted" data-i18n="calc-row-green">Fresh Green Fodder:</span>
               <span class="calc-result-value" style="color: var(--color-primary);" id="outGreen">25 - 30 kg</span>
             </div>
 
             <div class="calc-result-row">
-              <span class="text-muted">Dry Roughage (Wheat/Paddy Straw):</span>
+              <span class="text-muted" data-i18n="calc-row-dry">Dry Roughage (Wheat/Paddy Straw):</span>
               <span class="calc-result-value" id="outDry">4.5 - 5.5 kg</span>
             </div>
 
             <div class="calc-result-row">
-              <span class="text-muted">Concentrate Feed (Cakes + Grains):</span>
+              <span class="text-muted" data-i18n="calc-row-conc">Concentrate Feed (Cakes + Grains):</span>
               <span class="calc-result-value" style="color: var(--color-accent-dark);" id="outConcentrate">4.5 kg</span>
             </div>
 
             <div class="calc-result-row">
-              <span class="text-muted">Daily Clean Water Need:</span>
+              <span class="text-muted" data-i18n="calc-row-water">Daily Clean Water Need:</span>
               <span class="calc-result-value" style="color: var(--color-info);" id="outWater">75 - 90 Liters</span>
             </div>
 
             <div class="calc-result-row">
-              <span class="text-muted">Chelated Mineral Mixture:</span>
+              <span class="text-muted" data-i18n="calc-row-mineral">Chelated Mineral Mixture:</span>
               <span class="calc-result-value" id="outMineral">50 grams</span>
             </div>
           </div>
@@ -203,126 +191,122 @@
 
       <!-- CORE NUTRITION PILLARS -->
       <div class="section-header">
-        <span class="section-tag">Essential Categories</span>
-        <h2 class="section-title">The 5 Pillars of Animal Nutrition</h2>
-        <p class="section-subtitle">
-          A successful livestock diet combines energy, protein, digestible fiber, minerals, and ad-libitum clean water.
-        </p>
+        <span class="section-tag" data-i18n="nut-pillars-tag">Essential Categories</span>
+        <h2 class="section-title" data-i18n="nut-pillars-title">The 5 Pillars of Animal Nutrition</h2>
+        <p class="section-subtitle" data-i18n="nut-pillars-sub">A successful livestock diet combines energy, protein, digestible fiber, minerals, and ad-libitum clean water.</p>
       </div>
 
       <div class="grid grid-3" style="margin-bottom: var(--space-3xl);">
         <!-- Pillar 1: Green Fodder -->
         <div class="fodder-type-card">
           <div class="fodder-icon">🌱</div>
-          <h3 style="font-size: 1.25rem; color: var(--color-primary-dark); margin-bottom: 0.35rem;">
+          <h3 style="font-size: 1.25rem; color: var(--color-primary-dark); margin-bottom: 0.35rem;" data-i18n="pillar-green-title">
             1. Green Fodder (हरा चारा)
           </h3>
-          <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: var(--space-md); line-height: 1.5;">
+          <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: var(--space-md); line-height: 1.5;" data-i18n="nut-p1-desc">
             Rich in natural carotene (Vitamin A precursor), succulence, and minerals.
           </p>
           <ul style="font-size: 0.85rem; color: var(--color-text-muted); list-style: disc; padding-left: 1.2rem; line-height: 1.6;">
-            <li><strong>Legumes (High Protein):</strong> Berseem, Lucerne, Cowpea, Stylo.</li>
-            <li><strong>Cereals / Grasses (High Energy):</strong> Maize, Sorghum (Jowar), Bajra, Hybrid Napier (CO-4/CO-5).</li>
-            <li><strong>Silage:</strong> Fermented corn stalks preserve nutrients for dry seasons.</li>
+            <li><strong data-i18n="nut-p1-leg">Legumes (High Protein):</strong> <span data-i18n="nut-p1-leg-items">Berseem, Lucerne, Cowpea, Stylo.</span></li>
+            <li><strong data-i18n="nut-p1-cer">Cereals / Grasses (High Energy):</strong> <span data-i18n="nut-p1-cer-items">Maize, Sorghum (Jowar), Bajra, Hybrid Napier (CO-4/CO-5).</span></li>
+            <li><strong data-i18n="nut-p1-sil">Silage:</strong> <span data-i18n="nut-p1-sil-items">Fermented corn stalks preserve nutrients for dry seasons.</span></li>
           </ul>
         </div>
 
         <!-- Pillar 2: Dry Fodder -->
         <div class="fodder-type-card">
           <div class="fodder-icon">🌾</div>
-          <h3 style="font-size: 1.25rem; color: var(--color-primary-dark); margin-bottom: 0.35rem;">
+          <h3 style="font-size: 1.25rem; color: var(--color-primary-dark); margin-bottom: 0.35rem;" data-i18n="nut-p2-title">
             2. Dry Fodder & Straw (सूखा चारा)
           </h3>
-          <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: var(--space-md); line-height: 1.5;">
+          <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: var(--space-md); line-height: 1.5;" data-i18n="nut-p2-desc">
             Provides essential structural crude fiber required for healthy rumination, saliva buffering, and butterfat synthesis.
           </p>
           <ul style="font-size: 0.85rem; color: var(--color-text-muted); list-style: disc; padding-left: 1.2rem; line-height: 1.6;">
-            <li><strong>Wheat Straw (भूसा):</strong> Excellent dry roughage base.</li>
-            <li><strong>Paddy Straw:</strong> Soak or treat with urea-molasses to boost protein availability.</li>
-            <li><strong>Chaffing:</strong> Always chaff straw into 1-2 inch lengths to prevent waste and save animal chewing energy.</li>
+            <li><strong data-i18n="nut-p2-wheat">Wheat Straw (भूसा):</strong> <span data-i18n="nut-p2-wheat-desc">Excellent dry roughage base.</span></li>
+            <li><strong data-i18n="nut-p2-paddy">Paddy Straw:</strong> <span data-i18n="nut-p2-paddy-desc">Soak or treat with urea-molasses to boost protein availability.</span></li>
+            <li><strong data-i18n="nut-p2-chaff">Chaffing:</strong> <span data-i18n="nut-p2-chaff-desc">Always chaff straw into 1-2 inch lengths to prevent waste and save animal chewing energy.</span></li>
           </ul>
         </div>
 
         <!-- Pillar 3: Concentrates -->
         <div class="fodder-type-card">
           <div class="fodder-icon">🥣</div>
-          <h3 style="font-size: 1.25rem; color: var(--color-primary-dark); margin-bottom: 0.35rem;">
+          <h3 style="font-size: 1.25rem; color: var(--color-primary-dark); margin-bottom: 0.35rem;" data-i18n="nut-p3-title">
             3. Balanced Concentrates (पशु आहार)
           </h3>
-          <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: var(--space-md); line-height: 1.5;">
+          <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: var(--space-md); line-height: 1.5;" data-i18n="nut-p3-desc">
             Dense energy and protein blend required to meet the high metabolic demands of milk synthesis and growth.
           </p>
           <ul style="font-size: 0.85rem; color: var(--color-text-muted); list-style: disc; padding-left: 1.2rem; line-height: 1.6;">
-            <li><strong>Energy Grains (35-40%):</strong> Maize, barley, broken wheat.</li>
-            <li><strong>Protein Oil Cakes (30-35%):</strong> Mustard, cottonseed, groundnut, or soybean meal.</li>
-            <li><strong>Brans & Fiber (25-30%):</strong> Wheat bran, rice polish, or de-oiled cakes.</li>
+            <li><strong data-i18n="nut-p3-grain">Energy Grains (35-40%):</strong> <span data-i18n="nut-p3-grain-desc">Maize, barley, broken wheat.</span></li>
+            <li><strong data-i18n="nut-p3-cake">Protein Oil Cakes (30-35%):</strong> <span data-i18n="nut-p3-cake-desc">Mustard, cottonseed, groundnut, or soybean meal.</span></li>
+            <li><strong data-i18n="nut-p3-bran">Brans & Fiber (25-30%):</strong> <span data-i18n="nut-p3-bran-desc">Wheat bran, rice polish, or de-oiled cakes.</span></li>
           </ul>
         </div>
 
         <!-- Pillar 4: Minerals & Salt -->
         <div class="fodder-type-card">
           <div class="fodder-icon">🧂</div>
-          <h3 style="font-size: 1.25rem; color: var(--color-primary-dark); margin-bottom: 0.35rem;">
+          <h3 style="font-size: 1.25rem; color: var(--color-primary-dark); margin-bottom: 0.35rem;" data-i18n="nut-p4-title">
             4. Minerals & Common Salt
           </h3>
-          <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: var(--space-md); line-height: 1.5;">
+          <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: var(--space-md); line-height: 1.5;" data-i18n="nut-p4-desc">
             Essential for fertility, estrus expression, immune defense, and milk let-down.
           </p>
           <ul style="font-size: 0.85rem; color: var(--color-text-muted); list-style: disc; padding-left: 1.2rem; line-height: 1.6;">
-            <li>Daily mineral mixture: 50-60g for cattle/buffalo; 10-15g for goat/sheep.</li>
-            <li>Hang mineralized salt licks in sheds for free-choice trace mineral intake.</li>
-            <li>Proper 2:1 Calcium to Phosphorus ratio prevents Milk Fever post-calving.</li>
+            <li data-i18n="nut-p4-min1">Daily mineral mixture: 50-60g for cattle/buffalo; 10-15g for goat/sheep.</li>
+            <li data-i18n="nut-p4-min2">Hang mineralized salt licks in sheds for free-choice trace mineral intake.</li>
+            <li data-i18n="nut-p4-min3">Proper 2:1 Calcium to Phosphorus ratio prevents Milk Fever post-calving.</li>
           </ul>
         </div>
 
         <!-- Pillar 5: Clean Water -->
         <div class="fodder-type-card">
           <div class="fodder-icon">💧</div>
-          <h3 style="font-size: 1.25rem; color: var(--color-primary-dark); margin-bottom: 0.35rem;">
+          <h3 style="font-size: 1.25rem; color: var(--color-primary-dark); margin-bottom: 0.35rem;" data-i18n="nut-p5-title">
             5. Clean Drinking Water (स्वच्छ पानी)
           </h3>
-          <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: var(--space-md); line-height: 1.5;">
+          <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: var(--space-md); line-height: 1.5;" data-i18n="nut-p5-desc">
             Milk is 87% water! Water is the cheapest yet most frequently neglected nutrient on the farm.
           </p>
           <ul style="font-size: 0.85rem; color: var(--color-text-muted); list-style: disc; padding-left: 1.2rem; line-height: 1.6;">
-            <li>Dairy cows need 3-4 liters of water for every liter of milk produced.</li>
-            <li>Water must be free from coliforms, heavy nitrates, and algal toxins.</li>
-            <li>Scrub drinking troughs weekly and provide cool shade over water tanks.</li>
+            <li data-i18n="nut-p5-wat1">Dairy cows need 3-4 liters of water for every liter of milk produced.</li>
+            <li data-i18n="nut-p5-wat2">Water must be free from coliforms, heavy nitrates, and algal toxins.</li>
+            <li data-i18n="nut-p5-wat3">Scrub drinking troughs weekly and provide cool shade over water tanks.</li>
           </ul>
         </div>
 
         <!-- Practical Feeding Rules -->
         <div class="fodder-type-card" style="background: var(--color-primary-subtle); border-color: var(--color-primary-light);">
           <div class="fodder-icon">⏱️</div>
-          <h3 style="font-size: 1.25rem; color: var(--color-primary-dark); margin-bottom: 0.35rem;">
+          <h3 style="font-size: 1.25rem; color: var(--color-primary-dark); margin-bottom: 0.35rem;" data-i18n="nut-golden-title">
             Golden Feeding Practices
           </h3>
-          <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: var(--space-md); line-height: 1.5;">
+          <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: var(--space-md); line-height: 1.5;" data-i18n="nut-golden-desc">
             Consistent feeding routines maximize ruminal fermentation efficiency.
           </p>
           <ul style="font-size: 0.85rem; color: var(--color-text-muted); list-style: disc; padding-left: 1.2rem; line-height: 1.6;">
-            <li>Never change diets abruptly; transition gradually over 7 to 10 days.</li>
-            <li>Feed concentrates in two equal halves (morning and evening milking).</li>
-            <li>Clean the feeding manger daily; remove stale, saliva-soaked, or moldy feed.</li>
+            <li data-i18n="nut-golden-r1">Never change diets abruptly; transition gradually over 7 to 10 days.</li>
+            <li data-i18n="nut-golden-r2">Feed concentrates in two equal halves (morning and evening milking).</li>
+            <li data-i18n="nut-golden-r3">Clean the feeding manger daily; remove stale, saliva-soaked, or moldy feed.</li>
           </ul>
         </div>
       </div>
 
       <!-- ANIMAL-SPECIFIC NUTRITION GUIDES & FILTER -->
       <div class="section-header">
-        <span class="section-tag">Species Schedules</span>
-        <h2 class="section-title">Animal-Specific Feeding Guidelines</h2>
-        <p class="section-subtitle">
-          Explore specialized nutritional strategies designed for cows, buffalos, goats, and sheep.
-        </p>
+        <span class="section-tag" data-i18n="nut-species-schedules">Species Schedules</span>
+        <h2 class="section-title" data-i18n="nut-animal-feeding-guidelines">Animal-Specific Feeding Guidelines</h2>
+        <p class="section-subtitle" data-i18n="species-nut-sub">Explore specialized nutritional strategies designed for cows, buffalos, goats, and sheep.</p>
 
         <!-- Animal Filter Tabs -->
         <div class="filter-pills-wrap justify-center" style="margin-top: var(--space-md);">
-          <button type="button" class="filter-pill nutrition-tab-btn active" data-animal="all">All Livestock</button>
-          <button type="button" class="filter-pill nutrition-tab-btn" data-animal="cow">Cattle / Cow (गाय)</button>
-          <button type="button" class="filter-pill nutrition-tab-btn" data-animal="buffalo">Water Buffalo (भैंस)</button>
-          <button type="button" class="filter-pill nutrition-tab-btn" data-animal="goat">Goat (बकरी)</button>
-          <button type="button" class="filter-pill nutrition-tab-btn" data-animal="sheep">Sheep (भेड़)</button>
+          <button type="button" class="filter-pill nutrition-tab-btn active" data-animal="all" data-i18n="nut-tab-all-btn">All Livestock</button>
+          <button type="button" class="filter-pill nutrition-tab-btn" data-animal="cow" data-i18n="anim-filter-cow">Cattle / Cow (गाय)</button>
+          <button type="button" class="filter-pill nutrition-tab-btn" data-animal="buffalo" data-i18n="buffalo-title">Water Buffalo (भैंस)</button>
+          <button type="button" class="filter-pill nutrition-tab-btn" data-animal="goat" data-i18n="tab-goat-nut">Goat (बकरी)</button>
+          <button type="button" class="filter-pill nutrition-tab-btn" data-animal="sheep" data-i18n="tab-sheep-nut">Sheep (भेड़)</button>
         </div>
       </div>
 
@@ -330,44 +314,44 @@
       <div class="nutrition-animal-section" data-animal="cow" style="margin-bottom: var(--space-2xl);">
         <div class="quick-access-card" style="border-left: 6px solid var(--color-primary);">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: var(--space-md);">
-            <h3 style="font-size: 1.4rem; color: var(--color-primary-dark);">🐄 Dairy Cow Feeding Management</h3>
-            <span class="badge badge-primary">High Milk Yield Focus</span>
+            <h3 style="font-size: 1.4rem; color: var(--color-primary-dark);" data-i18n="nut-cow-mgmt-title">🐄 Dairy Cow Feeding Management</h3>
+            <span class="badge badge-primary" data-i18n="nut-cow-focus-badge">High Milk Yield Focus</span>
           </div>
-          <p style="font-size: 0.95rem; color: var(--color-text-muted); margin-bottom: var(--space-md);">
+          <p style="font-size: 0.95rem; color: var(--color-text-muted); margin-bottom: var(--space-md);" data-i18n="nut-cow-mgmt-desc">
             A high-yielding cow requires steady energy to avoid negative energy balance in early lactation (which triggers ketosis). Feed 1 kg concentrate for every 2.5-3.0 liters of milk, plus a 1.0-1.5 kg maintenance allowance. Mix leguminous and non-leguminous green fodder in a 1:3 ratio for balanced rumen crude protein and energy.
           </p>
           <div class="nutrition-table-wrap">
             <table class="data-table">
               <thead>
                 <tr>
-                  <th>Production Level</th>
-                  <th>Green Fodder (kg)</th>
-                  <th>Dry Straw (kg)</th>
-                  <th>Concentrate (kg)</th>
-                  <th>Mineral Mix</th>
+                  <th data-i18n="nut-th-prod-level">Production Level</th>
+                  <th data-i18n="nut-th-green-fodder">Green Fodder (kg)</th>
+                  <th data-i18n="nut-th-dry-straw">Dry Straw (kg)</th>
+                  <th data-i18n="nut-th-concentrate">Concentrate (kg)</th>
+                  <th data-i18n="nut-th-mineral-mix">Mineral Mix</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td><strong>Dry / Non-Milking (400 kg)</strong></td>
+                  <td data-i18n="nut-cow-row-dry"><strong>Dry / Non-Milking (400 kg)</strong></td>
                   <td>15 - 20 kg</td>
                   <td>5 - 6 kg</td>
                   <td>1.0 - 1.5 kg</td>
-                  <td>30 - 40 grams</td>
+                  <td data-i18n="nut-val-30-40g">30 - 40 grams</td>
                 </tr>
                 <tr>
-                  <td><strong>Medium Milking (8 - 12 L/day)</strong></td>
+                  <td data-i18n="nut-cow-row-med"><strong>Medium Milking (8 - 12 L/day)</strong></td>
                   <td>25 - 30 kg</td>
                   <td>4 - 5 kg</td>
                   <td>3.5 - 4.5 kg</td>
-                  <td>50 grams</td>
+                  <td data-i18n="nut-val-50g">50 grams</td>
                 </tr>
                 <tr>
-                  <td><strong>High Milking (15+ L/day)</strong></td>
+                  <td data-i18n="nut-cow-row-high"><strong>High Milking (15+ L/day)</strong></td>
                   <td>30 - 35 kg</td>
                   <td>4 kg</td>
                   <td>5.5 - 7.0 kg</td>
-                  <td>60 - 80 grams</td>
+                  <td data-i18n="nut-val-60-80g">60 - 80 grams</td>
                 </tr>
               </tbody>
             </table>
@@ -379,44 +363,44 @@
       <div class="nutrition-animal-section" data-animal="buffalo" style="margin-bottom: var(--space-2xl);">
         <div class="quick-access-card" style="border-left: 6px solid var(--color-accent-dark);">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: var(--space-md);">
-            <h3 style="font-size: 1.4rem; color: var(--color-primary-dark);">🐃 Water Buffalo Feeding Management</h3>
-            <span class="badge badge-warning">High Fat Secretion Focus</span>
+            <h3 style="font-size: 1.4rem; color: var(--color-primary-dark);" data-i18n="nut-buf-mgmt-title">🐃 Water Buffalo Feeding Management</h3>
+            <span class="badge badge-warning" data-i18n="nut-buf-focus-badge">High Fat Secretion Focus</span>
           </div>
-          <p style="font-size: 0.95rem; color: var(--color-text-muted); margin-bottom: var(--space-md);">
+          <p style="font-size: 0.95rem; color: var(--color-text-muted); margin-bottom: var(--space-md);" data-i18n="nut-buf-mgmt-desc">
             Buffaloes excel at digesting lignified, fibrous crop residues. However, because buffalo milk contains 7-8% butterfat, energy requirements per liter of milk are substantially higher than cattle. Feed 1 kg concentrate for every 2.0 liters of buffalo milk. During summer, provide cool drinking water and night-time stall feeding when ambient temperatures drop.
           </p>
           <div class="nutrition-table-wrap">
             <table class="data-table">
               <thead>
                 <tr>
-                  <th>Production Level</th>
-                  <th>Green Fodder (kg)</th>
-                  <th>Dry Straw (kg)</th>
-                  <th>Concentrate (kg)</th>
-                  <th>Mineral Mix</th>
+                  <th data-i18n="nut-th-prod-level">Production Level</th>
+                  <th data-i18n="nut-th-green-fodder">Green Fodder (kg)</th>
+                  <th data-i18n="nut-th-dry-straw">Dry Straw (kg)</th>
+                  <th data-i18n="nut-th-concentrate">Concentrate (kg)</th>
+                  <th data-i18n="nut-th-mineral-mix">Mineral Mix</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td><strong>Dry / Maintenance (500 kg)</strong></td>
+                  <td data-i18n="nut-buf-row-dry"><strong>Dry / Maintenance (500 kg)</strong></td>
                   <td>20 kg</td>
                   <td>6 - 7 kg</td>
                   <td>1.5 kg</td>
-                  <td>40 grams</td>
+                  <td data-i18n="nut-val-40g">40 grams</td>
                 </tr>
                 <tr>
-                  <td><strong>Lactating (8 - 12 L/day)</strong></td>
+                  <td data-i18n="nut-buf-row-lac"><strong>Lactating (8 - 12 L/day)</strong></td>
                   <td>30 - 35 kg</td>
                   <td>5 - 6 kg</td>
                   <td>4.5 - 6.0 kg</td>
-                  <td>60 grams</td>
+                  <td data-i18n="nut-val-60g">60 grams</td>
                 </tr>
                 <tr>
-                  <td><strong>Advanced Gestation (7+ months)</strong></td>
+                  <td data-i18n="nut-buf-row-gest"><strong>Advanced Gestation (7+ months)</strong></td>
                   <td>25 kg</td>
                   <td>5 kg</td>
                   <td>2.5 - 3.0 kg</td>
-                  <td>60 grams</td>
+                  <td data-i18n="nut-val-60g">60 grams</td>
                 </tr>
               </tbody>
             </table>
@@ -428,44 +412,44 @@
       <div class="nutrition-animal-section" data-animal="goat" style="margin-bottom: var(--space-2xl);">
         <div class="quick-access-card" style="border-left: 6px solid var(--color-emerald);">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: var(--space-md);">
-            <h3 style="font-size: 1.4rem; color: var(--color-primary-dark);">🐐 Goat Feeding & Browsing Management</h3>
-            <span class="badge badge-success">Selective Browser</span>
+            <h3 style="font-size: 1.4rem; color: var(--color-primary-dark);" data-i18n="nut-goat-mgmt-title">🐐 Goat Feeding & Browsing Management</h3>
+            <span class="badge badge-success" data-i18n="nut-goat-focus-badge">Selective Browser</span>
           </div>
-          <p style="font-size: 0.95rem; color: var(--color-text-muted); margin-bottom: var(--space-md);">
+          <p style="font-size: 0.95rem; color: var(--color-text-muted); margin-bottom: var(--space-md);" data-i18n="nut-goat-mgmt-desc">
             Goats possess a mobile split upper lip and prefer browsing tree foliage (Subabul, Neem, Ber, Gliricidia, Sesbania) over pasture grasses. They have a higher dry matter requirement (3.5% to 4.0% of body weight) due to rapid digestive transit. Provide clean water in buckets elevated off the ground to prevent defecation inside water.
           </p>
           <div class="nutrition-table-wrap">
             <table class="data-table">
               <thead>
                 <tr>
-                  <th>Category</th>
-                  <th>Tree Leaves / Green (kg)</th>
-                  <th>Dry Hay / Straw (kg)</th>
-                  <th>Grain Concentrate (g)</th>
-                  <th>Water Intake</th>
+                  <th data-i18n="nut-th-category">Category</th>
+                  <th data-i18n="nut-th-tree-leaves">Tree Leaves / Green (kg)</th>
+                  <th data-i18n="nut-th-dry-hay">Dry Hay / Straw (kg)</th>
+                  <th data-i18n="nut-th-grain-conc">Grain Concentrate (g)</th>
+                  <th data-i18n="nut-th-water-intake">Water Intake</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td><strong>Adult Doe (Maintenance, 35 kg)</strong></td>
+                  <td data-i18n="nut-goat-row-adult"><strong>Adult Doe (Maintenance, 35 kg)</strong></td>
                   <td>2.5 - 3.5 kg</td>
                   <td>0.5 - 1.0 kg</td>
-                  <td>150 - 200 grams</td>
-                  <td>3 - 5 Liters</td>
+                  <td data-i18n="nut-val-150-200g">150 - 200 grams</td>
+                  <td data-i18n="nut-val-3-5l">3 - 5 Liters</td>
                 </tr>
                 <tr>
-                  <td><strong>Milking Doe (2 L/day)</strong></td>
+                  <td data-i18n="nut-goat-row-milk"><strong>Milking Doe (2 L/day)</strong></td>
                   <td>4.0 - 5.0 kg</td>
                   <td>0.8 kg</td>
-                  <td>400 - 500 grams</td>
-                  <td>6 - 8 Liters</td>
+                  <td data-i18n="nut-val-400-500g">400 - 500 grams</td>
+                  <td data-i18n="nut-val-6-8l">6 - 8 Liters</td>
                 </tr>
                 <tr>
-                  <td><strong>Growing Kid (3 - 6 months)</strong></td>
-                  <td>1.5 kg tender greens</td>
-                  <td>Ad-lib hay</td>
-                  <td>150 - 250 grams</td>
-                  <td>1 - 2 Liters</td>
+                  <td data-i18n="nut-goat-row-kid"><strong>Growing Kid (3 - 6 months)</strong></td>
+                  <td data-i18n="nut-val-1-5kg-greens">1.5 kg tender greens</td>
+                  <td data-i18n="nut-val-adlib-hay">Ad-lib hay</td>
+                  <td data-i18n="nut-val-150-250g">150 - 250 grams</td>
+                  <td data-i18n="nut-val-1-2l">1 - 2 Liters</td>
                 </tr>
               </tbody>
             </table>
@@ -477,44 +461,44 @@
       <div class="nutrition-animal-section" data-animal="sheep" style="margin-bottom: var(--space-2xl);">
         <div class="quick-access-card" style="border-left: 6px solid var(--color-info);">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: var(--space-md);">
-            <h3 style="font-size: 1.4rem; color: var(--color-primary-dark);">🐑 Sheep Feeding & Grazing Management</h3>
-            <span class="badge badge-info">Grazer & Flock Management</span>
+            <h3 style="font-size: 1.4rem; color: var(--color-primary-dark);" data-i18n="sheep-nut-title">🐑 Sheep Feeding & Grazing Management</h3>
+            <span class="badge badge-info" data-i18n="nut-sheep-focus-badge">Grazer & Flock Management</span>
           </div>
           <p style="font-size: 0.95rem; color: var(--color-text-muted); margin-bottom: var(--space-md);">
-            Sheep are close-grazers that thrive on natural grasslands and stubble. Flushing (offering 200g grain supplement for 2 weeks prior to breeding) increases ovulation rates and twinning percentage. <strong>Caution:</strong> Ensure mineral supplements are formulated specifically for sheep with low copper levels to prevent lethal chronic copper poisoning.
+            <span data-i18n="nut-sheep-mgmt-desc-p1">Sheep are close-grazers that thrive on natural grasslands and stubble. Flushing (offering 200g grain supplement for 2 weeks prior to breeding) increases ovulation rates and twinning percentage.</span> <strong data-i18n="nut-sheep-caution-strong">Caution:</strong> <span data-i18n="nut-sheep-caution-desc">Ensure mineral supplements are formulated specifically for sheep with low copper levels to prevent lethal chronic copper poisoning.</span>
           </p>
           <div class="nutrition-table-wrap">
             <table class="data-table">
               <thead>
                 <tr>
-                  <th>Category</th>
-                  <th>Pasture / Green (kg)</th>
-                  <th>Dry Roughage (kg)</th>
-                  <th>Concentrate (g)</th>
-                  <th>Notes</th>
+                  <th data-i18n="nut-th-category">Category</th>
+                  <th data-i18n="nut-th-pasture-green">Pasture / Green (kg)</th>
+                  <th data-i18n="nut-th-dry-roughage">Dry Roughage (kg)</th>
+                  <th data-i18n="nut-th-sheep-conc">Concentrate (g)</th>
+                  <th data-i18n="nut-th-notes">Notes</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td><strong>Dry Ewe (30 kg)</strong></td>
-                  <td>6 - 8 hrs grazing</td>
-                  <td>0.5 kg hay</td>
-                  <td>Optional 100g</td>
-                  <td>Maintenance pasture</td>
+                  <td data-i18n="nut-sheep-row-dry"><strong>Dry Ewe (30 kg)</strong></td>
+                  <td data-i18n="nut-val-6-8h-grazing">6 - 8 hrs grazing</td>
+                  <td data-i18n="nut-val-0-5kg-hay">0.5 kg hay</td>
+                  <td data-i18n="nut-val-opt-100g">Optional 100g</td>
+                  <td data-i18n="nut-val-maint-pasture">Maintenance pasture</td>
                 </tr>
                 <tr>
-                  <td><strong>Flushing / Late Gestation</strong></td>
-                  <td>6 - 8 hrs grazing</td>
+                  <td data-i18n="nut-sheep-row-flush"><strong>Flushing / Late Gestation</strong></td>
+                  <td data-i18n="nut-val-6-8h-grazing">6 - 8 hrs grazing</td>
                   <td>0.8 kg</td>
-                  <td>250 - 300 grams</td>
-                  <td>High energy grain flush</td>
+                  <td data-i18n="nut-val-250-300g">250 - 300 grams</td>
+                  <td data-i18n="nut-val-grain-flush">High energy grain flush</td>
                 </tr>
                 <tr>
-                  <td><strong>Lactating Ewe (Nursing Lamb)</strong></td>
-                  <td>3 - 4 kg green fodder</td>
+                  <td data-i18n="nut-sheep-row-lac"><strong>Lactating Ewe (Nursing Lamb)</strong></td>
+                  <td data-i18n="nut-val-3-4kg-green">3 - 4 kg green fodder</td>
                   <td>0.8 kg</td>
-                  <td>350 - 400 grams</td>
-                  <td>Ensures abundant milk</td>
+                  <td data-i18n="nut-val-350-400g">350 - 400 grams</td>
+                  <td data-i18n="nut-val-abundant-milk">Ensures abundant milk</td>
                 </tr>
               </tbody>
             </table>
@@ -535,59 +519,58 @@
           <div class="brand-logo" style="margin-bottom: 0.5rem;">
             <div class="logo-icon" style="background: var(--color-primary-light);">🐄</div>
             <div class="brand-text-wrap">
-              <span class="brand-name">Smart Animal Care</span>
-              <span class="brand-tagline">Healthy Animals, Happy Farmers</span>
+              <span class="brand-name" data-i18n="brand-name">Smart Animal Care</span>
+              <span class="brand-tagline" data-i18n="brand-tagline">Healthy Animals, Happy Farmers</span>
             </div>
           </div>
-          <p class="footer-desc">
-            An open educational livestock healthcare and management platform designed to empower dairy and smallholder livestock farmers with reliable veterinary knowledge.
-          </p>
-          <div class="student-project-pill">🎓 Academic College Project — 2026</div>
+          <p class="footer-desc" data-i18n="footer-desc">An open educational livestock healthcare and management platform designed to empower dairy and smallholder livestock farmers with reliable veterinary knowledge.</p>
+          <div class="student-project-pill" data-i18n="footer-project-pill">🎓 Academic College Project — 2026</div>
         </div>
 
         <div>
-          <h4 class="footer-heading">Platform Links</h4>
+          <h4 class="footer-heading" data-i18n="footer-heading-links">Platform Links</h4>
           <ul class="footer-links">
-            <li><a href="index.html">Home Page</a></li>
-            <li><a href="animals.html">Animal Care Guides</a></li>
-            <li><a href="diseases.html">Livestock Disease Index</a></li>
-            <li><a href="nutrition.html">Nutrition & Feed Ration</a></li>
-            <li><a href="care-tips.html">Preventive Healthcare</a></li>
-            <li><a href="veterinarians.html">Find a Veterinarian</a></li>
-            <li><a href="contact.html">Project Info & Contact</a></li>
+            <li><a href="index.html" data-i18n="footer-link-home">Home Page</a></li>
+            <li><a href="animals.html" data-i18n="footer-link-animals">Animal Care Guides</a></li>
+            <li><a href="diseases.html" data-i18n="footer-link-diseases">Livestock Disease Index</a></li>
+            <li><a href="nutrition.html" data-i18n="footer-link-nutrition">Nutrition & Feed Ration</a></li>
+            <li><a href="care-tips.html" data-i18n="footer-link-care">Preventive Healthcare</a></li>
+            <li><a href="veterinarians.html" data-i18n="footer-link-vet">Find a Veterinarian</a></li>
+            <li><a href="contact.html" data-i18n="footer-link-contact">Project Info & Contact</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="footer-heading">Target Species</h4>
+          <h4 class="footer-heading" data-i18n="footer-heading-species">Target Species</h4>
           <ul class="footer-links">
-            <li><a href="animals.html">Dairy Cattle (Cow)</a></li>
-            <li><a href="animals.html">Water Buffalo</a></li>
-            <li><a href="animals.html">Goat (Small Ruminants)</a></li>
-            <li><a href="animals.html">Sheep & Flocks</a></li>
-            <li><a href="care-tips.html">Vaccine Schedules</a></li>
-            <li><a href="nutrition.html">Feed Calculator</a></li>
+            <li><a href="animals.html" data-i18n="footer-species-cow">Dairy Cattle (Cow)</a></li>
+            <li><a href="animals.html" data-i18n="footer-species-buffalo">Water Buffalo</a></li>
+            <li><a href="animals.html" data-i18n="footer-species-goat">Goat (Small Ruminants)</a></li>
+            <li><a href="animals.html" data-i18n="footer-species-sheep">Sheep & Flocks</a></li>
+            <li><a href="care-tips.html" data-i18n="footer-species-vaccines">Vaccine Schedules</a></li>
+            <li><a href="nutrition.html" data-i18n="footer-species-calculator">Feed Calculator</a></li>
           </ul>
         </div>
 
         <div>
-          <h4 class="footer-heading">Emergency Helpline</h4>
+          <h4 class="footer-heading" data-i18n="footer-heading-helpline">Emergency Helpline</h4>
           <div class="footer-emergency-box">
-            <h5>National Animal Ambulance</h5>
-            <p>Toll-free emergency veterinary dispensary support across India.</p>
+            <h5 data-i18n="footer-helpline-title">National Animal Ambulance</h5>
+            <p data-i18n="footer-helpline-desc">Toll-free emergency veterinary dispensary support across India.</p>
             <a href="tel:1962" class="phone-number">📞 1962</a>
           </div>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2026 Smart Animal Care — Final Year Student Project. All rights reserved.</p>
-        <p>Built with HTML5, CSS3, & Vanilla JavaScript. No external dependencies.</p>
+        <p data-i18n="footer-copyright">&copy; 2026 Smart Animal Care — Final Year Student Project. All rights reserved.</p>
+        <p data-i18n="footer-tech-stack">Built with HTML5, CSS3, & Vanilla JavaScript. No external dependencies.</p>
       </div>
     </div>
   </footer>
 
   <button type="button" class="back-to-top" id="backToTop" aria-label="Scroll back to top">↑</button>
+  <script src="js/translations.js" defer></script>
   <script src="js/script.js" defer></script>
 </body>
 </html>

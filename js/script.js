@@ -5,15 +5,15 @@
  * Features:
  * 1. Mobile Navigation & Drawer
  * 2. Sticky Header & Back to Top
- * 3. Multi-language Translation Engine (EN / HI / MR)
+ * 3. Centralized Multi-language Translation Engine (EN / HI / MR)
  * 4. Toast Notification Utility
- * 5. Animal Care Search, Filter & Detailed Modal
- * 6. Disease Guide Search & Category Filters
- * 7. Nutrition Interactive Feed Ration Calculator
- * 8. Preventive Care Checklist & Progress Tracker
- * 9. Vaccination Reminder System (LocalStorage CRUD)
+ * 5. Animal Care Search, Filter & Dynamic Detailed Modal (i18n)
+ * 6. Disease Guide Search & Category Filters (i18n)
+ * 7. Nutrition Interactive Feed Ration Calculator (i18n units)
+ * 8. Preventive Care Checklist & Progress Tracker (i18n)
+ * 9. Vaccination Reminder System (LocalStorage CRUD with i18n badges & labels)
  * 10. Find a Vet Search, Specialty Filter, Location & Call Modals
- * 11. Contact Form Client-side Validation & Feedback
+ * 11. Contact Form Client-side Validation & Feedback (i18n error toasts)
  * 12. Accessible FAQ Accordions
  */
 
@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileNavigation();
   initStickyHeader();
   initBackToTop();
-  initLanguageSelector();
   initToast();
   initFAQAccordions();
 
@@ -32,6 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initPreventiveCarePage();
   initFindVetPage();
   initContactPage();
+
+  // Initialize Language Selector AFTER page initializers so dynamic callbacks are registered
+  initLanguageSelector();
 });
 
 /* ==========================================================================
@@ -98,102 +100,116 @@ function initBackToTop() {
 }
 
 /* ==========================================================================
-   3. MULTI-LANGUAGE TRANSLATION (EN | HI | MR)
+   3. CENTRALIZED MULTI-LANGUAGE TRANSLATION ENGINE (EN | HI | MR)
    ========================================================================== */
-const TRANSLATIONS = {
-  en: {
-    'brand-tagline': 'Healthy Animals, Happy Farmers',
-    'nav-home': 'Home',
-    'nav-animals': 'Animals',
-    'nav-diseases': 'Diseases',
-    'nav-nutrition': 'Nutrition',
-    'nav-care': 'Preventive Care',
-    'nav-vet': 'Find a Vet',
-    'nav-contact': 'About / Contact',
-    'cta-find-vet': 'Find a Veterinarian',
-    'hero-heading': 'Healthy Animals, <br><span>Happy Farmers</span>',
-    'hero-subheading': 'Your Livestock’s Health Matters',
-    'hero-text': 'Access animal healthcare information, nutrition guidance, preventive care tips and veterinary assistance in one place.',
-    'explore-care': 'Explore Animal Care',
-    'quick-access-title': 'Essential Livestock Healthcare Services',
-    'disclaimer-title': 'Important Veterinary Notice',
-    'disclaimer-text': 'This information is for educational purposes only and should not be used as a substitute for professional veterinary diagnosis or treatment. Always consult a qualified veterinarian for animal health emergencies.'
-  },
-  hi: {
-    'brand-tagline': 'स्वस्थ पशु, समृद्ध किसान',
-    'nav-home': 'होम',
-    'nav-animals': 'पशु देखभाल',
-    'nav-diseases': 'रोग जानकारी',
-    'nav-nutrition': 'पशु आहार',
-    'nav-care': 'निवारक देखभाल',
-    'nav-vet': 'पशु चिकित्सक खोजें',
-    'nav-contact': 'संपर्क / परिचय',
-    'cta-find-vet': 'पशु चिकित्सक खोजें',
-    'hero-heading': 'स्वस्थ पशु, <br><span>समृद्ध किसान</span>',
-    'hero-subheading': 'आपके पशुधन का स्वास्थ्य सर्वोपरि',
-    'hero-text': 'पशु स्वास्थ्य जानकारी, संतुलित आहार मार्गदर्शन, रोग निवारक उपाय और पशु चिकित्सा सहायता एक ही स्थान पर प्राप्त करें।',
-    'explore-care': 'पशु देखभाल देखें',
-    'quick-access-title': 'प्रमुख पशु स्वास्थ्य सेवाएं',
-    'disclaimer-title': 'महत्वपूर्ण पशु चिकित्सा सूचना',
-    'disclaimer-text': 'यह जानकारी केवल शैक्षणिक और जागरूकता उद्देश्यों के लिए है। इसे पेशेवर पशु चिकित्सक के निदान या उपचार का विकल्प न मानें। बीमारी की स्थिति में योग्य पशु चिकित्सक से तुरंत संपर्क करें।'
-  },
-  mr: {
-    'brand-tagline': 'निरोगी जनावरे, सुखी शेतकरी',
-    'nav-home': 'मुख्यपृष्ठ',
-    'nav-animals': 'जनावरांची काळजी',
-    'nav-diseases': 'आजार माहिती',
-    'nav-nutrition': 'पशुखाद्य व पोषण',
-    'nav-care': 'प्रतिबंधात्मक काळजी',
-    'nav-vet': 'पशुवैद्य शोधा',
-    'nav-contact': 'संपर्क / माहिती',
-    'cta-find-vet': 'पशुवैद्यक शोधा',
-    'hero-heading': 'निरोगी जनावरे, <br><span>सुखी शेतकरी</span>',
-    'hero-subheading': 'आपल्या पशुधनाचे आरोग्य अत्यंत महत्त्वाचे',
-    'hero-text': 'पशु आरोग्य माहिती, संतुलित आहार मार्गदर्शन, रोग प्रतिबंधक उपाय आणि पशुवैद्यकीय सहाय्य एकाच ठिकाणी मिळवा.',
-    'explore-care': 'जनावरांची माहिती पहा',
-    'quick-access-title': 'प्रमुख पशु आरोग्य सेवा',
-    'disclaimer-title': 'महत्त्वाची पशुवैद्यकीय सूचना',
-    'disclaimer-text': 'ही माहिती केवळ शैक्षणिक आणि जनजागृतीसाठी आहे. यास तज्ज्ञ पशुवैद्यांच्या उपचारांचा पर्याय मानू नये. जनावरांच्या आजारपणात त्वरित अधिकृत पशुवैद्यकीय अधिकाऱ्यांशी संपर्क साधावा.'
+// Master dictionary loaded from js/translations.js
+const TRANSLATIONS = window.APP_TRANSLATIONS || {};
+const ANIMAL_DETAILS_DATA_I18N = window.ANIMAL_DETAILS_DATA_I18N || {};
+const DYNAMIC_UI_I18N = window.DYNAMIC_UI_I18N || {};
+
+let currentLang = 'en';
+const langChangeCallbacks = [];
+
+function onLanguageChange(callback) {
+  if (typeof callback === 'function') {
+    langChangeCallbacks.push(callback);
   }
-};
+}
+
+function getCurrentLanguage() {
+  return currentLang;
+}
+
+function getDynamicText(key, fallback = '') {
+  if (DYNAMIC_UI_I18N[currentLang] && DYNAMIC_UI_I18N[currentLang][key] !== undefined) {
+    return DYNAMIC_UI_I18N[currentLang][key];
+  }
+  if (DYNAMIC_UI_I18N['en'] && DYNAMIC_UI_I18N['en'][key] !== undefined) {
+    return DYNAMIC_UI_I18N['en'][key];
+  }
+  return fallback || key;
+}
 
 function initLanguageSelector() {
   const langButtons = document.querySelectorAll('.lang-btn');
   const storedLang = localStorage.getItem('smart_animal_care_lang') || 'en';
 
-  setLanguage(storedLang);
+  setLanguage(storedLang, false);
 
   langButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       const selectedLang = btn.getAttribute('data-lang');
       if (selectedLang) {
-        setLanguage(selectedLang);
-        showToast(`Language switched to ${btn.textContent.trim()}`);
+        setLanguage(selectedLang, true);
       }
     });
   });
 }
 
-function setLanguage(lang) {
+function setLanguage(lang, showToastFeedback = false) {
   if (!TRANSLATIONS[lang]) lang = 'en';
+  currentLang = lang;
   localStorage.setItem('smart_animal_care_lang', lang);
 
-  // Update active state on buttons
+  // Set document language attribute for accessibility
+  document.documentElement.lang = lang;
+
+  // Update active state on language selector buttons
   document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+    const isActive = btn.getAttribute('data-lang') === lang;
+    btn.classList.toggle('active', isActive);
+    btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
   });
 
-  // Update DOM elements with data-i18n attributes
+  const langDict = TRANSLATIONS[lang] || {};
+
+  // 1. Update text/HTML content for data-i18n elements
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
-    if (TRANSLATIONS[lang] && TRANSLATIONS[lang][key]) {
-      if (TRANSLATIONS[lang][key].includes('<')) {
-        el.innerHTML = TRANSLATIONS[lang][key];
-      } else {
-        el.textContent = TRANSLATIONS[lang][key];
-      }
+    if (langDict[key] !== undefined) {
+      el.innerHTML = langDict[key];
     }
   });
+
+  // 2. Update placeholder attributes for inputs
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (langDict[key] !== undefined) {
+      el.setAttribute('placeholder', langDict[key]);
+    }
+  });
+
+  // 3. Update title attributes
+  document.querySelectorAll('[data-i18n-title]').forEach(el => {
+    const key = el.getAttribute('data-i18n-title');
+    if (langDict[key] !== undefined) {
+      el.setAttribute('title', langDict[key]);
+    }
+  });
+
+  // 4. Update aria-label attributes
+  document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+    const key = el.getAttribute('data-i18n-aria');
+    if (langDict[key] !== undefined) {
+      el.setAttribute('aria-label', langDict[key]);
+    }
+  });
+
+  // 5. Notify all registered dynamic page listeners
+  langChangeCallbacks.forEach(cb => {
+    try {
+      cb(lang);
+    } catch (err) {
+      console.warn('Error executing language callback:', err);
+    }
+  });
+
+  if (showToastFeedback) {
+    const langNames = { en: 'English', hi: 'हिंदी (Hindi)', mr: 'मराठी (Marathi)' };
+    const switchMsg = getDynamicText('toast_lang_switched', 'Language switched to {lang}')
+      .replace('{lang}', langNames[lang] || lang);
+    showToast(switchMsg, '🌐');
+  }
 }
 
 /* ==========================================================================
@@ -229,109 +245,7 @@ function showToast(message, icon = '🌿') {
 /* ==========================================================================
    5. ANIMAL CARE PAGE (animals.html)
    ========================================================================== */
-const ANIMAL_DETAILS_DATA = {
-  cow: {
-    name: 'Dairy Cattle (Cow / गाय)',
-    species: 'Bos taurus / Bos indicus',
-    image: 'images/cow.jpg',
-    tag: 'Ruminant Herbivore',
-    lifespan: '15 - 20 Years',
-    gestation: '280 - 285 Days',
-    bodyTemp: '38.5°C - 39.2°C (101.5°F - 102.5°F)',
-    dailyWater: '60 - 90 Liters',
-    intro: 'Cattle are vital milk and draught animals across farming communities. Common Indian indigenous breeds include Gir, Sahiwal, and Red Sindhi, alongside high-yielding crossbreds (Jersey & Holstein Friesian crosses).',
-    careTips: [
-      'Provide well-ventilated, clean, dry housing with grooved non-slippery floor.',
-      'Ensure 24/7 access to fresh, uncontaminated drinking water in cleaned troughs.',
-      'Wash udder with warm potassium permanganate solution before milking to prevent Mastitis.',
-      'Provide comfortable bedding (dry paddy straw or rubber mats) to avoid hock lesions and lameness.',
-      'Observe daily rumination (chewing cud); absence of rumination is an early red flag for illness.'
-    ],
-    feeding: 'Daily diet requires balanced dry matter (2.5-3.0% of body weight). Provide 25-30 kg green fodder (Napier, Maize, Berseem), 5-7 kg dry roughage (wheat/paddy straw), and 1 kg concentrate feed for every 2.5-3 liters of milk produced plus mineral mixture (50g/day).',
-    healthConcerns: [
-      'Bovine Mastitis (inflammation of udder and teat canal)',
-      'Foot and Mouth Disease (FMD) - High fever and vesicular lesions',
-      'Hemorrhagic Septicemia (HS / Galghontu) - Acute throat swelling',
-      'Bloat / Ruminal Acidosis caused by sudden carbohydrate excess'
-    ],
-    redFlags: 'Cessation of rumination, high rectal temperature (>103°F), watery discharge from eyes/nose, swollen hard quarter of udder, or blood in milk require urgent veterinary care.'
-  },
-  buffalo: {
-    name: 'Water Buffalo (Buffalo / भैंस)',
-    species: 'Bubalus bubalis',
-    image: 'images/buffalo.jpg',
-    tag: 'Dairy & Draught Animal',
-    lifespan: '18 - 25 Years',
-    gestation: '305 - 315 Days',
-    bodyTemp: '37.5°C - 38.5°C (100.0°F - 101.5°F)',
-    dailyWater: '80 - 110 Liters',
-    intro: 'Water buffaloes (notably Murrah, Nili-Ravi, Mehsana, and Jaffarabadi) are famous for rich, high-fat milk (7-8% fat). They thrive on high-roughage diets but require special heat mitigation as they have fewer sweat glands.',
-    careTips: [
-      'Buffaloes are prone to heat stress. Provide wallowing ponds or water splashing 2-3 times daily in hot summers.',
-      'Provide shaded sheds with high roofs and cooling ceiling fans/misting during summer afternoons.',
-      'Protect teats from soil contamination; buffalo teats have wider teat canals vulnerable to bacterial entry.',
-      'Maintain deworming every 3-4 months, especially before and after the monsoon season.'
-    ],
-    feeding: 'Buffaloes have excellent ruminal fiber digestion. Daily ration: 30-35 kg green fodder, 6-8 kg chopped dry straw, and 1 kg concentrate for every 2 liters of buffalo milk plus 50-60g mineral mixture and iodized salt.',
-    healthConcerns: [
-      'Subclinical and Clinical Mastitis',
-      'Hemorrhagic Septicemia (very high fatality in buffalo calves)',
-      'Silent Heat / Sub-estrus (requires vigilant estrus detection at dawn and dusk)',
-      'Uterine Prolapse during pre- or post-calving'
-    ],
-    redFlags: 'Panting with tongue extended, lack of wallowing desire, sudden milk drop, abnormal vaginal discharge, or swelling in lower neck requires emergency veterinary intervention.'
-  },
-  goat: {
-    name: 'Domestic Goat (Goat / बकरी)',
-    species: 'Capra hircus',
-    image: 'images/goat.jpg',
-    tag: 'Small Ruminant',
-    lifespan: '10 - 15 Years',
-    gestation: '145 - 152 Days',
-    bodyTemp: '38.5°C - 39.5°C (101.5°F - 103.5°F)',
-    dailyWater: '5 - 10 Liters',
-    intro: 'Often called the "Poor Man’s Cow", goats (such as Jamunapari, Boer, Black Bengal, Sirohi, and Osmanabadi) offer high prolificacy, low initial investment, and nutritious easily digestible milk.',
-    careTips: [
-      'Goats hate dampness and rain. House them on raised slatted wooden or bamboo floors with dry surroundings.',
-      'They are natural browsers; allow browsing on tree leaves (Subabul, Neem, Ber) rather than just ground grass.',
-      'Inspect hooves every month and trim overgrown hooves to prevent contagious Foot Rot.',
-      'Young kids must receive colostrum within 1-2 hours of birth to build passive maternal immunity.'
-    ],
-    feeding: 'Goats consume 3-4% of body weight in dry matter. Feed high-quality legume fodder (Lucerne, Berseem, Cowpea), tree loppings, 200-400g concentrate grain mixture during lactation/pregnancy, and clean salt licks.',
-    healthConcerns: [
-      'PPR (Peste des Petits Ruminants / Goat Plague) - Highly contagious viral illness',
-      'Enterotoxemia (Pulpy Kidney Disease) triggered by rich green feed',
-      'Coccidiosis and Gastrointestinal Nematodes (Haemonchus / wireworm)',
-      'Contagious Caprine Pleuropneumonia (CCPP)'
-    ],
-    redFlags: 'Nasal discharge with mouth sores, foul watery diarrhea, sudden recumbency (inability to stand), or pale inner eyelids (severe anemia from worms) indicates acute distress.'
-  },
-  sheep: {
-    name: 'Domestic Sheep (Sheep / भेड़)',
-    species: 'Ovis aries',
-    image: 'images/sheep.jpg',
-    tag: 'Wool & Meat Ruminant',
-    lifespan: '10 - 12 Years',
-    gestation: '145 - 150 Days',
-    bodyTemp: '38.5°C - 39.5°C (102.0°F - 103.5°F)',
-    dailyWater: '4 - 8 Liters',
-    intro: 'Sheep (popular breeds include Deccani, Nellore, Marwari, Mandya, and Bharat Merino) are gregarious flock grazers well-adapted to arid and semi-arid terrain, providing wool, meat, and organic manure.',
-    careTips: [
-      'Practice regular dipping or spraying 2-3 weeks after shearing to control external ectoparasites (lice, ticks, mites).',
-      'Provide dry, well-drained shelters. Sheep fleece absorbs water, predisposing them to hypothermia and pneumonia.',
-      'Trim hooves periodically and run flocks through a 5% copper sulfate or formalin footbath to treat foot rot.',
-      'Never feed cattle mineral mixtures to sheep! Sheep are uniquely sensitive to copper toxicity.'
-    ],
-    feeding: 'Sheep thrive on natural grazing (6-8 hours daily on pasture or rangeland). Supplement pregnant ewes and breeding rams with 150-300g concentrate mixture (cracked maize, bran, oil cake) and provide free-choice sheep-safe mineral blocks.',
-    healthConcerns: [
-      'Enterotoxemia (Overeating Disease) - vaccinate prior to monsoon pasture flush',
-      'Sheep Pox - fever and papular skin eruptions',
-      'Foot Rot caused by Dichelobacter nodosus in muddy pens',
-      'Blue Tongue Disease spread by biting Culicoides midges'
-    ],
-    redFlags: 'Lameness spreading through flock, swollen blue tongue, sudden death of robust animals after grazing, or blistering skin lesions must be reported to the nearest dispensary.'
-  }
-};
+let currentOpenAnimalKey = null;
 
 function initAnimalCarePage() {
   const searchInput = document.getElementById('animalSearchInput');
@@ -365,7 +279,10 @@ function initAnimalCarePage() {
     });
 
     if (resultsCount) {
-      resultsCount.textContent = `Showing ${visibleCount} of ${animalCards.length} animals`;
+      const template = getDynamicText('showing_animals', 'Showing {shown} of {total} animals');
+      resultsCount.textContent = template
+        .replace('{shown}', visibleCount)
+        .replace('{total}', animalCards.length);
     }
 
     if (noResults) {
@@ -405,45 +322,77 @@ function initAnimalCarePage() {
   if (modalCloseBtn) {
     modalCloseBtn.addEventListener('click', closeAnimalModal);
   }
+
+  // Register language change callback for animal care page
+  onLanguageChange(() => {
+    filterAnimals();
+    if (currentOpenAnimalKey) {
+      openAnimalModal(currentOpenAnimalKey);
+    }
+  });
+
+  // Initial filter run
+  filterAnimals();
 }
 
 function openAnimalModal(animalKey) {
-  const data = ANIMAL_DETAILS_DATA[animalKey];
-  const modal = document.getElementById('animalDetailModal');
-  if (!data || !modal) return;
+  currentOpenAnimalKey = animalKey;
+  const lang = getCurrentLanguage();
+  const langData = (ANIMAL_DETAILS_DATA_I18N[lang] && ANIMAL_DETAILS_DATA_I18N[lang][animalKey])
+    ? ANIMAL_DETAILS_DATA_I18N[lang][animalKey]
+    : (ANIMAL_DETAILS_DATA_I18N['en'] ? ANIMAL_DETAILS_DATA_I18N['en'][animalKey] : null);
 
-  document.getElementById('modalAnimalName').textContent = data.name;
-  document.getElementById('modalAnimalSpecies').textContent = data.species;
-  document.getElementById('modalAnimalTag').textContent = data.tag;
-  document.getElementById('modalAnimalLifespan').textContent = data.lifespan;
-  document.getElementById('modalAnimalGestation').textContent = data.gestation;
-  document.getElementById('modalAnimalTemp').textContent = data.bodyTemp;
-  document.getElementById('modalAnimalWater').textContent = data.dailyWater;
-  document.getElementById('modalAnimalIntro').textContent = data.intro;
-  document.getElementById('modalAnimalFeeding').textContent = data.feeding;
-  document.getElementById('modalAnimalRedFlags').textContent = data.redFlags;
+  const modal = document.getElementById('animalDetailModal');
+  if (!langData || !modal) return;
+
+  const modalTitle = document.getElementById('modalAnimalName');
+  const modalSpecies = document.getElementById('modalAnimalSpecies');
+  const modalTag = document.getElementById('modalAnimalTag');
+  const modalLifespan = document.getElementById('modalAnimalLifespan');
+  const modalGestation = document.getElementById('modalAnimalGestation');
+  const modalTemp = document.getElementById('modalAnimalTemp');
+  const modalWater = document.getElementById('modalAnimalWater');
+  const modalIntro = document.getElementById('modalAnimalIntro');
+  const modalFeeding = document.getElementById('modalAnimalFeeding');
+  const modalRedFlags = document.getElementById('modalAnimalRedFlags');
+
+  if (modalTitle) modalTitle.textContent = langData.name;
+  if (modalSpecies) modalSpecies.textContent = langData.species;
+  if (modalTag) modalTag.textContent = langData.tag;
+  if (modalLifespan) modalLifespan.textContent = langData.lifespan;
+  if (modalGestation) modalGestation.textContent = langData.gestation;
+  if (modalTemp) modalTemp.textContent = langData.bodyTemp;
+  if (modalWater) modalWater.textContent = langData.dailyWater;
+  if (modalIntro) modalIntro.textContent = langData.intro;
+  if (modalFeeding) modalFeeding.textContent = langData.feeding;
+  if (modalRedFlags) modalRedFlags.textContent = langData.redFlags;
 
   const tipsList = document.getElementById('modalAnimalCareTips');
-  tipsList.innerHTML = '';
-  data.careTips.forEach(tip => {
-    const li = document.createElement('li');
-    li.textContent = tip;
-    tipsList.appendChild(li);
-  });
+  if (tipsList) {
+    tipsList.innerHTML = '';
+    langData.careTips.forEach(tip => {
+      const li = document.createElement('li');
+      li.textContent = tip;
+      tipsList.appendChild(li);
+    });
+  }
 
   const concernsList = document.getElementById('modalAnimalConcerns');
-  concernsList.innerHTML = '';
-  data.healthConcerns.forEach(item => {
-    const li = document.createElement('li');
-    li.textContent = item;
-    concernsList.appendChild(li);
-  });
+  if (concernsList) {
+    concernsList.innerHTML = '';
+    langData.healthConcerns.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = item;
+      concernsList.appendChild(li);
+    });
+  }
 
   modal.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
 
 function closeAnimalModal() {
+  currentOpenAnimalKey = null;
   const modal = document.getElementById('animalDetailModal');
   if (modal) {
     modal.classList.remove('open');
@@ -490,7 +439,10 @@ function initDiseasePage() {
     });
 
     if (resultsCount) {
-      resultsCount.textContent = `Showing ${visibleCount} of ${diseaseCards.length} documented diseases`;
+      const template = getDynamicText('showing_diseases', 'Showing {shown} of {total} documented diseases');
+      resultsCount.textContent = template
+        .replace('{shown}', visibleCount)
+        .replace('{total}', diseaseCards.length);
     }
 
     if (noResults) {
@@ -513,13 +465,20 @@ function initDiseasePage() {
   if (speciesSelect) {
     speciesSelect.addEventListener('change', filterDiseases);
   }
+
+  // Register dynamic language callback for diseases page
+  onLanguageChange(() => {
+    filterDiseases();
+  });
+
+  // Initial filter run
+  filterDiseases();
 }
 
 /* ==========================================================================
    7. NUTRITION PAGE & FEED RATION CALCULATOR (nutrition.html)
    ========================================================================== */
 function initNutritionPage() {
-  // Feed Ration Calculator Elements
   const animalSelect = document.getElementById('calcAnimalType');
   const weightInput = document.getElementById('calcWeight');
   const milkInput = document.getElementById('calcMilk');
@@ -551,7 +510,7 @@ function initNutritionPage() {
     if (animal === 'buffalo') {
       dmPercent = 2.8;
       waterPerKg = 0.18;
-      concPerMilk = 0.5; // buffalo milk has higher fat
+      concPerMilk = 0.5;
       maintConc = 1.5;
       mineralDose = 60;
     } else if (animal === 'goat') {
@@ -575,33 +534,34 @@ function initNutritionPage() {
     }
 
     // Calculations
-    const totalDM = (weight * (dmPercent / 100)); // kg Dry Matter
+    const totalDM = (weight * (dmPercent / 100));
     const totalConcentrate = (maintConc + (milk * concPerMilk));
-    
-    // Concentrate contributes roughly 90% DM
     const concDM = totalConcentrate * 0.90;
     const roughageDM = Math.max(0, totalDM - concDM);
 
-    // Roughage split: ~60% from green fodder (20% DM content) and 40% from dry roughage (90% DM content)
     const greenDM = roughageDM * 0.55;
     const dryDM = roughageDM * 0.45;
 
-    const freshGreenFodder = greenDM / 0.20; // 20% dry matter in fresh greens
-    const dryRoughage = dryDM / 0.90;       // 90% dry matter in dry straw
+    const freshGreenFodder = greenDM / 0.20;
+    const dryRoughage = dryDM / 0.90;
 
     const dailyWater = (weight * waterPerKg) + (milk * 2.5);
 
-    // Render results
-    if (outDM) outDM.textContent = `${totalDM.toFixed(1)} kg / day`;
-    if (outGreen) outGreen.textContent = `${Math.round(freshGreenFodder)} - ${Math.round(freshGreenFodder * 1.15)} kg`;
-    if (outDry) outDry.textContent = `${dryRoughage.toFixed(1)} - ${(dryRoughage * 1.2).toFixed(1)} kg`;
-    if (outConc) outConc.textContent = `${totalConcentrate.toFixed(1)} kg`;
-    if (outWater) outWater.textContent = `${Math.round(dailyWater)} - ${Math.round(dailyWater + 15)} Liters`;
-    if (outMineral) outMineral.textContent = `${mineralDose} grams`;
+    // Units localized from DYNAMIC_UI_I18N
+    const uKgDay = getDynamicText('unit_kg_day', 'kg / day');
+    const uKg = getDynamicText('unit_kg', 'kg');
+    const uLiters = getDynamicText('unit_liters', 'Liters');
+    const uGrams = getDynamicText('unit_grams', 'grams');
+
+    if (outDM) outDM.textContent = `${totalDM.toFixed(1)} ${uKgDay}`;
+    if (outGreen) outGreen.textContent = `${Math.round(freshGreenFodder)} - ${Math.round(freshGreenFodder * 1.15)} ${uKg}`;
+    if (outDry) outDry.textContent = `${dryRoughage.toFixed(1)} - ${(dryRoughage * 1.2).toFixed(1)} ${uKg}`;
+    if (outConc) outConc.textContent = `${totalConcentrate.toFixed(1)} ${uKg}`;
+    if (outWater) outWater.textContent = `${Math.round(dailyWater)} - ${Math.round(dailyWater + 15)} ${uLiters}`;
+    if (outMineral) outMineral.textContent = `${mineralDose} ${uGrams}`;
   }
 
   animalSelect.addEventListener('change', () => {
-    // Set sensible defaults per animal
     if (animalSelect.value === 'cow') {
       weightInput.value = 400;
       milkInput.value = 10;
@@ -621,9 +581,6 @@ function initNutritionPage() {
   weightInput.addEventListener('input', calculateRation);
   milkInput.addEventListener('input', calculateRation);
   if (stageSelect) stageSelect.addEventListener('change', calculateRation);
-
-  // Initial calculation
-  calculateRation();
 
   // Animal filter tabs for nutrition cards
   const nutritionTabs = document.querySelectorAll('.nutrition-tab-btn');
@@ -645,6 +602,14 @@ function initNutritionPage() {
       });
     });
   }
+
+  // Register language change callback for nutrition page
+  onLanguageChange(() => {
+    calculateRation();
+  });
+
+  // Initial calculation
+  calculateRation();
 }
 
 /* ==========================================================================
@@ -668,13 +633,25 @@ function initChecklistTracker() {
 
     const percent = Math.round((checkedCount / checkboxes.length) * 100);
     if (progressBadge) {
-      progressBadge.textContent = `${checkedCount}/${checkboxes.length} Completed (${percent}%)`;
+      const template = getDynamicText('checklist_progress', '{done}/{total} Completed ({percent}%)');
+      progressBadge.textContent = template
+        .replace('{done}', checkedCount)
+        .replace('{total}', checkboxes.length)
+        .replace('{percent}', percent);
     }
   }
 
   checkboxes.forEach(cb => {
     cb.addEventListener('change', updateProgress);
   });
+
+  // Register callback
+  onLanguageChange(() => {
+    updateProgress();
+  });
+
+  // Initial update
+  updateProgress();
 }
 
 function initVaccinationReminders() {
@@ -737,6 +714,12 @@ function initVaccinationReminders() {
     if (emptyState) emptyState.style.display = 'none';
 
     const today = new Date();
+    const lblVaccine = getDynamicText('lbl_vaccine', 'Vaccine');
+    const lblNextDue = getDynamicText('lbl_next_due', 'Next Due');
+    const lblAdministered = getDynamicText('lbl_administered', 'Administered');
+    const lblNote = getDynamicText('lbl_note', 'Note');
+    const btnRemove = getDynamicText('btn_remove', '✕ Remove');
+    const btnRemoveTitle = getDynamicText('btn_remove_title', 'Delete Reminder');
 
     items.forEach(item => {
       const dueDate = new Date(item.dueDate);
@@ -744,14 +727,14 @@ function initVaccinationReminders() {
       const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
       let badgeClass = 'badge-primary';
-      let statusText = `${diffDays} days left`;
+      let statusText = getDynamicText('days_left', '{n} days left').replace('{n}', diffDays);
 
       if (diffDays < 0) {
         badgeClass = 'badge-danger';
-        statusText = `Overdue by ${Math.abs(diffDays)} days`;
+        statusText = getDynamicText('overdue_by', 'Overdue by {n} days').replace('{n}', Math.abs(diffDays));
       } else if (diffDays <= 14) {
         badgeClass = 'badge-warning';
-        statusText = `Due in ${diffDays} days`;
+        statusText = getDynamicText('due_in', 'Due in {n} days').replace('{n}', diffDays);
       }
 
       const card = document.createElement('div');
@@ -759,12 +742,12 @@ function initVaccinationReminders() {
       card.innerHTML = `
         <div class="reminder-item-info">
           <h5>${escapeHTML(item.tag)} <span class="badge ${badgeClass}">${statusText}</span></h5>
-          <p><strong>Vaccine:</strong> ${escapeHTML(item.vaccine)}</p>
-          <p><strong>Next Due:</strong> ${escapeHTML(item.dueDate)} | <strong>Administered:</strong> ${escapeHTML(item.dateGiven || 'N/A')}</p>
-          ${item.notes ? `<p class="text-muted"><small><em>Note: ${escapeHTML(item.notes)}</em></small></p>` : ''}
+          <p><strong>${escapeHTML(lblVaccine)}:</strong> ${escapeHTML(item.vaccine)}</p>
+          <p><strong>${escapeHTML(lblNextDue)}:</strong> ${escapeHTML(item.dueDate)} | <strong>${escapeHTML(lblAdministered)}:</strong> ${escapeHTML(item.dateGiven || 'N/A')}</p>
+          ${item.notes ? `<p class="text-muted"><small><em>${escapeHTML(lblNote)}: ${escapeHTML(item.notes)}</em></small></p>` : ''}
         </div>
-        <button type="button" class="btn-delete-reminder" data-id="${item.id}" title="Delete Reminder">
-          ✕ Remove
+        <button type="button" class="btn-delete-reminder" data-id="${item.id}" title="${escapeHTML(btnRemoveTitle)}">
+          ${escapeHTML(btnRemove)}
         </button>
       `;
 
@@ -777,7 +760,7 @@ function initVaccinationReminders() {
         const idToDelete = e.currentTarget.getAttribute('data-id');
         const updated = getReminders().filter(rem => rem.id !== idToDelete);
         saveReminders(updated);
-        showToast('Reminder deleted successfully', '🗑️');
+        showToast(getDynamicText('toast_reminder_deleted', 'Reminder deleted successfully'), '🗑️');
       });
     });
   }
@@ -793,7 +776,7 @@ function initVaccinationReminders() {
     const notes = document.getElementById('remNotes').value.trim();
 
     if (!tag || !vaccine || !dueDate) {
-      showToast('Please fill in Animal Tag, Vaccine Name, and Due Date', '⚠️');
+      showToast(getDynamicText('toast_fill_reminder', 'Please fill in Animal Tag, Vaccine Name, and Due Date'), '⚠️');
       return;
     }
 
@@ -812,17 +795,23 @@ function initVaccinationReminders() {
     saveReminders(current);
 
     form.reset();
-    showToast('Vaccination Reminder added to your schedule!', '✅');
+    showToast(getDynamicText('toast_reminder_added', 'Vaccination Reminder added to your schedule!'), '✅');
   });
 
   if (clearAllBtn) {
     clearAllBtn.addEventListener('click', () => {
-      if (confirm('Are you sure you want to clear all vaccination reminders?')) {
+      const confirmPrompt = getDynamicText('confirm_clear_reminders', 'Are you sure you want to clear all vaccination reminders?');
+      if (confirm(confirmPrompt)) {
         saveReminders([]);
-        showToast('All reminders cleared', '🧹');
+        showToast(getDynamicText('toast_reminders_cleared', 'All reminders cleared'), '🧹');
       }
     });
   }
+
+  // Register language change callback
+  onLanguageChange(() => {
+    renderReminders();
+  });
 
   // Initial render
   renderReminders();
@@ -866,7 +855,10 @@ function initFindVetPage() {
     });
 
     if (resultsCount) {
-      resultsCount.textContent = `Showing ${count} of ${vetCards.length} veterinary centers`;
+      const template = getDynamicText('showing_vets', 'Showing {shown} of {total} veterinary centers');
+      resultsCount.textContent = template
+        .replace('{shown}', count)
+        .replace('{total}', vetCards.length);
     }
 
     if (noResults) {
@@ -915,15 +907,26 @@ function initFindVetPage() {
     });
   }
   if (closeCallBtn) closeCallBtn.addEventListener('click', closeCallModal);
+
+  // Register language change callback
+  onLanguageChange(() => {
+    filterVets();
+  });
+
+  // Initial filter run
+  filterVets();
 }
 
 function openCallModal(doctor, phone) {
   const modal = document.getElementById('vetCallModal');
   if (!modal) return;
 
-  document.getElementById('callDoctorName').textContent = doctor;
-  document.getElementById('callPhoneNumber').textContent = phone;
+  const docEl = document.getElementById('callDoctorName');
+  const phoneEl = document.getElementById('callPhoneNumber');
   const telLink = document.getElementById('callTelLink');
+
+  if (docEl) docEl.textContent = doctor;
+  if (phoneEl) phoneEl.textContent = phone;
   if (telLink) telLink.href = `tel:${phone}`;
 
   modal.classList.add('open');
@@ -942,8 +945,11 @@ function openLocationModal(clinic, address) {
   const modal = document.getElementById('vetLocationModal');
   if (!modal) return;
 
-  document.getElementById('locClinicName').textContent = clinic;
-  document.getElementById('locAddress').textContent = address;
+  const clinicEl = document.getElementById('locClinicName');
+  const addrEl = document.getElementById('locAddress');
+
+  if (clinicEl) clinicEl.textContent = clinic;
+  if (addrEl) addrEl.textContent = address;
 
   modal.classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -1009,17 +1015,17 @@ function initContactPage() {
     }
 
     if (!isValid) {
-      showToast('Please fix the highlighted fields in the form.', '⚠️');
+      showToast(getDynamicText('toast_form_fix_fields', 'Please fix the highlighted fields in the form.'), '⚠️');
       return;
     }
 
-    // Show academic demo success modal or banner
+    // Show academic demo success modal or toast
     const successModal = document.getElementById('contactSuccessModal');
     if (successModal) {
       successModal.classList.add('open');
       document.body.style.overflow = 'hidden';
     } else {
-      showToast('Thank you! Your inquiry was successfully recorded (Demo Mode).', '✅');
+      showToast(getDynamicText('toast_inquiry_sent', 'Thank you! Your inquiry was successfully recorded (Demo Mode).'), '✅');
     }
 
     form.reset();
